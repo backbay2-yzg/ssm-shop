@@ -49,7 +49,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">修改商品信息</h4>
             </div>
             <div class="modal-body">
@@ -115,7 +116,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title">添加商品活动</h4>
             </div>
             <div class="modal-body">
@@ -134,11 +136,13 @@
                     <div class="row form-group">
                         <div class="col-lg-6 form-group">
                             <label class="control-label" for="activityname">活动名称</label>
-                            <span type="text" class="form-control show-span" id="activityname" name="activityname"></span>
+                            <span type="text" class="form-control show-span" id="activityname"
+                                  name="activityname"></span>
                         </div>
                         <div class="col-lg-6 form-group">
                             <label class="control-label" for="discount">折扣</label>
-                            <span type="number" class="form-control show-span" id="discount" name="discount" step="0.01"></span>
+                            <span type="number" class="form-control show-span" id="discount" name="discount"
+                                  step="0.01"></span>
                         </div>
                     </div>
                     <div class="row form-group">
@@ -148,7 +152,8 @@
                         </div>
                         <div class="col-lg-6 form-group">
                             <label class="control-label" for="reduceprice">减</label>
-                            <span type="number" class="form-control show-span" id="reduceprice" name="reduceprice"></span>
+                            <span type="number" class="form-control show-span" id="reduceprice"
+                                  name="reduceprice"></span>
                         </div>
                     </div>
 
@@ -166,7 +171,8 @@
                     <div class="row form-group">
                         <div class="col-lg-12 form-group">
                             <label class="control-label" for="activitydes">活动描述</label>
-                            <span class="form-control show-span" id="activitydes" rows="3" name="activitydes">asfd</span>
+                            <span class="form-control show-span" id="activitydes" rows="3"
+                                  name="activitydes">asfd</span>
                         </div>
                     </div>
                 </form>

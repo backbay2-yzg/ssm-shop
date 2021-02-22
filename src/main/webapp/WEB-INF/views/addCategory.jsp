@@ -17,7 +17,7 @@
     <meta name="description" content="">
     <meta name="author" content="templatemo">
     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-   <%-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>--%>
+    <%-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>--%>
     <link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/templatemo-style.css" rel="stylesheet">
@@ -50,7 +50,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">修改分类名称</h4>
             </div>
             <div class="modal-body">
@@ -65,7 +66,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="saveCatename" >保存</button>
+                <button type="button" class="btn btn-primary" id="saveCatename">保存</button>
             </div>
         </div>
     </div>
@@ -85,16 +86,21 @@
                             <thead>
                             <tr>
                                 <td>分类名</td>
-                                <td >编辑</td>
-                                <td >删除</td>
+                                <td>编辑</td>
+                                <td>删除</td>
                             </tr>
                             </thead>
                             <tbody>
                             <c:forEach items="${categoryList}" var="category">
                                 <tr>
-                                    <td><a href="" class="templatemo-link" cateId="${category.cateid}">${category.catename}</a></td>
-                                    <td><button href="" class="templatemo-edit-btn" name="changCate">编辑</button></td>
-                                    <td><button href="" class="templatemo-delete-btn" name="deleteCate">删除</button></td>
+                                    <td><a href="" class="templatemo-link"
+                                           cateId="${category.cateid}">${category.catename}</a></td>
+                                    <td>
+                                        <button href="" class="templatemo-edit-btn" name="changCate">编辑</button>
+                                    </td>
+                                    <td>
+                                        <button href="" class="templatemo-delete-btn" name="deleteCate">删除</button>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -119,7 +125,7 @@
 </div>
 
 <!-- JS -->
-        <!-- Templatemo Script -->
+<!-- Templatemo Script -->
 <c:if test="${!empty msg}">
     <script type="text/javascript">
         $(document).ready(function () {

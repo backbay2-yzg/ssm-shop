@@ -44,7 +44,8 @@
                             <textarea class="form-control" name="message" id="input-message" rows="2"></textarea>
                         </div>
                         <div class="form-group send-div">
-                            <input class="form-control btn btn-primary btn-block" id="send-message" type="submit" value="发送">
+                            <input class="form-control btn btn-primary btn-block" id="send-message" type="submit"
+                                   value="发送">
                         </div>
                     </div>
                 </div>

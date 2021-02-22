@@ -65,7 +65,11 @@ public class Comment {
         this.commenttime = commenttime;
     }
 
-    public void setUserName(String userName) {this.username=userName;}
+    public void setUserName(String userName) {
+        this.username = userName;
+    }
 
-    public String getUsername() {return username;}
+    public String getUsername() {
+        return username;
+    }
 }

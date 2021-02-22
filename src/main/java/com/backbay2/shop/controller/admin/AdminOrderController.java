@@ -30,7 +30,7 @@ public class AdminOrderController {
     private GoodsService goodsService;
 
     @RequestMapping("/send")
-    public String sendOrder(@RequestParam(value = "page",defaultValue = "1")Integer pn, Model model, HttpSession session) {
+    public String sendOrder(@RequestParam(value = "page", defaultValue = "1") Integer pn, Model model, HttpSession session) {
 
         Admin admin = (Admin) session.getAttribute("admin");
         if (admin == null) {
@@ -77,7 +77,7 @@ public class AdminOrderController {
         }
 
         //显示几个页号
-        PageInfo page = new PageInfo(orderList,5);
+        PageInfo page = new PageInfo(orderList, 5);
         model.addAttribute("pageInfo", page);
 
         return "adminAllOrder";
@@ -97,7 +97,7 @@ public class AdminOrderController {
     }
 
     @RequestMapping("/receiver")
-    public String receiveOrder(@RequestParam(value = "page",defaultValue = "1")Integer pn, Model model,HttpSession session) {
+    public String receiveOrder(@RequestParam(value = "page", defaultValue = "1") Integer pn, Model model, HttpSession session) {
         Admin admin = (Admin) session.getAttribute("admin");
         if (admin == null) {
             return "redirect:/admin/login";
@@ -144,7 +144,7 @@ public class AdminOrderController {
         }
 
         //显示几个页号
-        PageInfo page = new PageInfo(orderList,5);
+        PageInfo page = new PageInfo(orderList, 5);
         model.addAttribute("pageInfo", page);
 
         return "adminOrderReceive";

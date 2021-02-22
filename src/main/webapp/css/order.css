@@ -2,7 +2,7 @@
     border-bottom: solid 1px #c6c5c5;
 }
 
-.h4-mar{
+.h4-mar {
     margin-top: 30px;
 }
 
@@ -10,11 +10,11 @@
     margin-top: 30px;
 }
 
-.address>.radio {
+.address > .radio {
     padding-left: 50px;
 }
 
-.radio>label {
+.radio > label {
     margin: 5px 0 5px 0;
 }
 

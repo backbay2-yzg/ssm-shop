@@ -48,7 +48,8 @@
             <div class="row">
                 <nav class="templatemo-top-nav col-lg-12 col-md-12">
                     <ul class="text-uppercase">
-                        <li><a href="${pageContext.request.contextPath}/admin/activity/show" class="active">所有活动</a></li>
+                        <li><a href="${pageContext.request.contextPath}/admin/activity/show" class="active">所有活动</a>
+                        </li>
                         <li><a href="${pageContext.request.contextPath}/admin/activity/add">添加活动</a></li>
                         <%--<li><a href="${pageContext.request.contextPath}/admin/goods/addCategory">添加分类</a></li>--%>
                         <%--<li><a href="login.html">。。。</a></li>--%>
@@ -64,7 +65,8 @@
                         <tr>
                             <td><a href="" class="white-text templatemo-sort-by">id<span class="caret"></span></a></td>
                             <td><a href="" class="white-text templatemo-sort-by">活动名<span class="caret"></span></a></td>
-                            <td><a href="" class="white-text templatemo-sort-by">活动描述<span class="caret"></span></a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">活动描述<span class="caret"></span></a>
+                            </td>
                             <td><a href="" class="white-text templatemo-sort-by">折扣<span class="caret"></span></a></td>
                             <td><a href="" class="white-text templatemo-sort-by">满减<span class="caret"></span></a></td>
                             <td><a href="" class="white-text templatemo-sort-by">满免<span class="caret"></span></a></td>
@@ -91,7 +93,9 @@
                                 <c:if test="${empty activity.fullnum}">
                                     <td>无满免</td>
                                 </c:if>
-                                <td><a href="${pageContext.request.contextPath}/admin/activity/delete?activityid=${activity.activityid}" class="templatemo-delete-btn" style="padding: 0;">删除</a></td>
+                                <td>
+                                    <a href="${pageContext.request.contextPath}/admin/activity/delete?activityid=${activity.activityid}"
+                                       class="templatemo-delete-btn" style="padding: 0;">删除</a></td>
                             </tr>
                         </c:forEach>
                         </tbody>
@@ -111,7 +115,8 @@
                     </li>
                     <c:if test="${pageInfo.hasPreviousPage}">
                         <li>
-                            <a href="${pageContext.request.contextPath}/admin/goods/show?page=${pageInfo.pageNum - 1}" aria-label="Previous">
+                            <a href="${pageContext.request.contextPath}/admin/goods/show?page=${pageInfo.pageNum - 1}"
+                               aria-label="Previous">
                                 <span aria-hidden="true"><i class="fa fa-backward"></i></span>
                             </a>
                         </li>
@@ -119,22 +124,28 @@
 
                     <c:forEach items="${pageInfo.navigatepageNums}" var="pageNums">
                         <c:if test="${pageNums == pageInfo.pageNum}">
-                            <li class="active"><a href="${pageContext.request.contextPath}/admin/goods/show?page=${pageNums}">${pageNums}</a></li>
+                            <li class="active"><a
+                                    href="${pageContext.request.contextPath}/admin/goods/show?page=${pageNums}">${pageNums}</a>
+                            </li>
                         </c:if>
                         <c:if test="${pageNums != pageInfo.pageNum}">
-                            <li><a href="${pageContext.request.contextPath}/admin/goods/show?page=${pageNums}">${pageNums}</a></li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/admin/goods/show?page=${pageNums}">${pageNums}</a>
+                            </li>
                         </c:if>
                     </c:forEach>
 
                     <c:if test="${pageInfo.hasNextPage}">
                         <li>
-                            <a href="${pageContext.request.contextPath}/admin/goods/show?page=${pageInfo.pageNum + 1}" aria-label="Next">
+                            <a href="${pageContext.request.contextPath}/admin/goods/show?page=${pageInfo.pageNum + 1}"
+                               aria-label="Next">
                                 <span aria-hidden="true"><i class="fa fa-forward"></i></span>
                             </a>
                         </li>
                     </c:if>
                     <li>
-                        <a href="${pageContext.request.contextPath}/admin/goods/show?page=${pageInfo.pages}" aria-label="Next">
+                        <a href="${pageContext.request.contextPath}/admin/goods/show?page=${pageInfo.pages}"
+                           aria-label="Next">
                             <span aria-hidden="true">末页</span>
                         </a>
                     </li>

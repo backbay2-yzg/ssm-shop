@@ -8,7 +8,7 @@
     <context id="DB2Tables" targetRuntime="MyBatis3">
 
         <commentGenerator>
-            <property name="suppressAllComments" value="true" />
+            <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
         <!--配置数据库连接信息-->
@@ -18,26 +18,26 @@
                         password="root">
         </jdbcConnection>
 
-        <javaTypeResolver >
-            <property name="forceBigDecimals" value="false" />
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
         <javaModelGenerator targetPackage="com.backbay2.shop.pojo" targetProject=".\src\main\java">
-            <property name="enableSubPackages" value="true" />
-            <property name="trimStrings" value="true" />
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--xml-->
-        <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resources">
-            <property name="enableSubPackages" value="true" />
+        <sqlMapGenerator targetPackage="mapper" targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!--dao接口-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.backbay2.shop.dao"  targetProject=".\src\main\java">
-            <property name="enableSubPackages" value="true" />
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.backbay2.shop.dao" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!--指定哪个表的生成策略-->
-        <table tableName="indent" domainObjectName="Order" ></table>
+        <table tableName="indent" domainObjectName="Order"></table>
     </context>
 </generatorConfiguration>

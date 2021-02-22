@@ -11,6 +11,7 @@ import java.util.List;
  */
 public interface UserService {
     public User selectByPrimaryKey(int userId);
+
     /*public User selectByPrimaryKeyAndPassword(int userId,String password);*/
     public List<User> selectByExample(UserExample userExample);
 

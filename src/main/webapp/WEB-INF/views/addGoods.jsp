@@ -16,7 +16,8 @@
     <title>后台管理</title>
     <meta name="description" content="">
     <meta name="author" content="templatemo">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet'
+          type='text/css'>
     <link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/templatemo-style.css" rel="stylesheet">
@@ -30,7 +31,7 @@
 
     <script src="${pageContext.request.contextPath}/js/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/sweetalert.css">
-    
+
     <%--<c:if test="${empty msg}">
         <script>
             swal(${msg}, "成功","success");
@@ -48,7 +49,8 @@
             <div class="templatemo-content-widget white-bg">
                 <h2 class="margin-bottom-10">添加商品</h2>
                 <p>商品的一些基本信息</p>
-                <form action="${pageContext.request.contextPath}/admin/goods/addGoodsSuccess" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+                <form action="${pageContext.request.contextPath}/admin/goods/addGoodsSuccess"
+                      class="templatemo-login-form" method="post" enctype="multipart/form-data">
                     <div class="row form-group">
                         <div class="col-lg-12 form-group">
                             <label class="control-label" for="inputWithSuccess">商品名称</label>
@@ -89,7 +91,9 @@
                         <div class="col-lg-12">
                             <label class="control-label templatemo-block">图片</label>
                             <!-- <input type="file" name="fileToUpload" id="fileToUpload" class="margin-bottom-10"> -->
-                            <input type="file" name="fileToUpload" id="fileToUpload" class="filestyle" data-buttonName="btn-primary" data-buttonBefore="true" data-icon="false" multiple="multiple">
+                            <input type="file" name="fileToUpload" id="fileToUpload" class="filestyle"
+                                   data-buttonName="btn-primary" data-buttonBefore="true" data-icon="false"
+                                   multiple="multiple">
                             <!-- <p>Maximum upload size is 5 MB.</p>  -->
                         </div>
                     </div>
@@ -104,9 +108,12 @@
 </div>
 
 <!-- JS -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.2.min.js"></script>        <!-- jQuery -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-filestyle.min.js"></script>  <!-- http://markusslima.github.io/bootstrap-filestyle/ -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/templatemo-script.js"></script>        <!-- Templatemo Script -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.2.min.js"></script>
+<!-- jQuery -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-filestyle.min.js"></script>
+<!-- http://markusslima.github.io/bootstrap-filestyle/ -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/templatemo-script.js"></script>
+<!-- Templatemo Script -->
 <c:if test="${!empty msg}">
     <script type="text/javascript">
         $(document).ready(function () {

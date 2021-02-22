@@ -112,7 +112,7 @@ public class ChatController {
         userExample.or().andUseridIn(useridList);
         List<User> userList = userService.selectByExample(userExample);
 
-        return Msg.success("获取聊天列表成功").add("userlist",userList);
+        return Msg.success("获取聊天列表成功").add("userlist", userList);
     }
 
 
@@ -158,7 +158,7 @@ public class ChatController {
         if (adminuser == null) {
             return Msg.fail("请先登录");
         }
-        Integer userid =5;
+        Integer userid = 5;
         ChatExample chatExample = new ChatExample();
         chatExample.or().andReceiveuserEqualTo(userid);
 //        chatExample.or().andSenduserEqualTo(user.getUserid());
@@ -189,7 +189,7 @@ public class ChatController {
         userExample.or().andUseridIn(useridList);
         List<User> userList = userService.selectByExample(userExample);
 //        model.addAttribute("chatuserlist", userList);
-        return Msg.success("获取列表成功").add("userlist",userList);
+        return Msg.success("获取列表成功").add("userlist", userList);
     }
 
     @PostMapping("/sendMessage")

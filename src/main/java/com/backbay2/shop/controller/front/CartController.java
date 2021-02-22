@@ -31,7 +31,7 @@ public class CartController {
     public String addCart(ShopCart shopCart, HttpServletRequest request) {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        if(user == null) {
+        if (user == null) {
             return "redirect:/login";
         }
 
@@ -56,7 +56,7 @@ public class CartController {
     @RequestMapping("/showcart")
     public String showCart(HttpSession session) {
         User user = (User) session.getAttribute("user");
-        if(user == null) {
+        if (user == null) {
             return "redirect:/login";
         }
         return "shopcart";
@@ -66,7 +66,7 @@ public class CartController {
     @ResponseBody
     public Msg getCart(HttpSession session) {
         User user = (User) session.getAttribute("user");
-        if(user == null) {
+        if (user == null) {
             return Msg.fail("请先登录");
         }
 
@@ -77,7 +77,7 @@ public class CartController {
 
         //获取购物车中的商品信息
         List<Goods> goodsAndImage = new ArrayList<>();
-        for (ShopCart cart:shopCart) {
+        for (ShopCart cart : shopCart) {
             Goods goods = goodsService.selectById(cart.getGoodsid());
 
             List<ImagePath> imagePathList = goodsService.findImagePath(goods.getGoodsid());
@@ -86,14 +86,14 @@ public class CartController {
             goodsAndImage.add(goods);
         }
 
-        return Msg.success("查询成功").add("shopcart",goodsAndImage);
+        return Msg.success("查询成功").add("shopcart", goodsAndImage);
     }
 
     @RequestMapping(value = "/deleteCart/{goodsid}", method = RequestMethod.DELETE)
     @ResponseBody
-    public Msg deleteCart(@PathVariable("goodsid")Integer goodsid, HttpSession session) {
+    public Msg deleteCart(@PathVariable("goodsid") Integer goodsid, HttpSession session) {
         User user = (User) session.getAttribute("user");
-        if(user == null) {
+        if (user == null) {
             return Msg.fail("请先登录");
         }
 
@@ -103,9 +103,9 @@ public class CartController {
 
     @RequestMapping("/update")
     @ResponseBody
-    public Msg updateCart(Integer goodsid,Integer num,HttpSession session) {
+    public Msg updateCart(Integer goodsid, Integer num, HttpSession session) {
         User user = (User) session.getAttribute("user");
-        if(user == null) {
+        if (user == null) {
             return Msg.fail("请先登录");
         }
         ShopCart shopCart = new ShopCart();

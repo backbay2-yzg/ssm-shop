@@ -36,7 +36,8 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/infostyle.css">
@@ -64,8 +65,8 @@
             color: white;
         }
 
-        .finish-btn{
-            background-color:#e65b0e !important;
+        .finish-btn {
+            background-color: #e65b0e !important;
         }
     </style>
 </head>
@@ -77,13 +78,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content" id="parentModal">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">修改地址</h4>
             </div>
             <div class="modal-body">
                 <form class="form-inline mt-2 mb-4">
-                    <div  data-toggle="distpicker" data-autoselect="3">
-                        <label for="telephone" class="col-sm-2 control-label" style="padding-left: 28px;padding-top: 10px">省市区</label>
+                    <div data-toggle="distpicker" data-autoselect="3">
+                        <label for="telephone" class="col-sm-2 control-label"
+                               style="padding-left: 28px;padding-top: 10px">省市区</label>
                         <select class="form-control" id="provinceUpdate"></select>
                         <select class="form-control" id="cityUpdate"></select>
                         <select class="form-control" id="countyUpdate"></select>
@@ -112,7 +115,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="saveAddr" >保存</button>
+                <button type="button" class="btn btn-primary" id="saveAddr">保存</button>
             </div>
         </div>
     </div>
@@ -124,13 +127,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content" id="parentModalInsert">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabelInsert">添加地址</h4>
             </div>
             <div class="modal-body">
                 <form class="form-inline mt-2 mb-4">
-                    <div  data-toggle="distpicker" data-autoselect="3">
-                        <label for="telephone" class="col-sm-2 control-label" style="padding-left: 28px;padding-top: 10px">省市区</label>
+                    <div data-toggle="distpicker" data-autoselect="3">
+                        <label for="telephone" class="col-sm-2 control-label"
+                               style="padding-left: 28px;padding-top: 10px">省市区</label>
                         <select class="form-control" id="provinceInsert"></select>
                         <select class="form-control" id="cityInsert"></select>
                         <select class="form-control" id="countyInsert"></select>
@@ -140,7 +145,8 @@
                     <div class="form-group">
                         <label for="detailaddress" class="col-sm-2 control-label">详细地址</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="detailaddressInsert" id="detailaddressInsert"/>
+                            <input type="text" class="form-control" name="detailaddressInsert"
+                                   id="detailaddressInsert"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -159,7 +165,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="insertAddr" >保存</button>
+                <button type="button" class="btn btn-primary" id="insertAddr">保存</button>
             </div>
         </div>
     </div>
@@ -210,65 +216,71 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/main"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>主页</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/information"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>个人信息</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/list"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>订单管理</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/address"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>地址管理</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/favorite"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>我的收藏</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/main"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>主页</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/information"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>个人信息</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/list"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>订单管理</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/address"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>地址管理</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/favorite"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>我的收藏</a>
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
-<c:forEach items="${addressList}" var="item">
-        <div class="mdl-grid demo-content" id="parent">
-            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-                <div class="tab-content">
-                    <table class="table" cellpadding="6" cellspacing="1" address-id="${item.addressid}" id="table">
-                        <thead>
-                        <th style="border: 0px solid transparent">
-                            <%--<h1>个人信息</h1>--%>
-                        </th>
-                        </thead>
-                        <tbody >
-                        <tr >
-                            <th style="border: 0px solid transparent" class="tl">收货人</th>
-                            <td style="border: 0px solid transparent" class="tr" id="conname">${item.conname}</td>
-                        </tr>
-                        <tr>
-                            <th style="border: 0px solid transparent" class="tl">手机号</th>
-                            <td style="border: 0px solid transparent" class="tr" id="contel">${item.contel}</td>
-                        </tr>
-                        <tr>
-                            <th style="border: 0px solid transparent" class="tl">省</th>
-                            <td style="border: 0px solid transparent" class="tr" id="province">${item.province}</td>
-                        </tr>
-                        <tr>
-                            <th style="border: 0px solid transparent" class="tl">市</th>
-                            <td style="border: 0px solid transparent" class="tr" id="city">${item.city}</td>
-                        </tr>
-                        <tr>
-                            <th style="border: 0px solid transparent" class="tl">县/区</th>
-                            <td style="border: 0px solid transparent" class="tr" id="county">${item.county}</td>
-                        </tr>
-                        <tr>
-                            <th style="border: 0px solid transparent" class="tl">详细地址</th>
-                            <td style="border: 0px solid transparent" class="tr" id="detailaddr">${item.detailaddr}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <button class="templatemo-blue-button" name="changeAddr"><h5>修改地址</h5></button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button class="templatemo-blue-button finish-btn" name="deleteAddr"><h5>删除地址</h5></button>
+        <c:forEach items="${addressList}" var="item">
+            <div class="mdl-grid demo-content" id="parent">
+                <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+                    <div class="tab-content">
+                        <table class="table" cellpadding="6" cellspacing="1" address-id="${item.addressid}" id="table">
+                            <thead>
+                            <th style="border: 0px solid transparent">
+                                    <%--<h1>个人信息</h1>--%>
+                            </th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th style="border: 0px solid transparent" class="tl">收货人</th>
+                                <td style="border: 0px solid transparent" class="tr" id="conname">${item.conname}</td>
+                            </tr>
+                            <tr>
+                                <th style="border: 0px solid transparent" class="tl">手机号</th>
+                                <td style="border: 0px solid transparent" class="tr" id="contel">${item.contel}</td>
+                            </tr>
+                            <tr>
+                                <th style="border: 0px solid transparent" class="tl">省</th>
+                                <td style="border: 0px solid transparent" class="tr" id="province">${item.province}</td>
+                            </tr>
+                            <tr>
+                                <th style="border: 0px solid transparent" class="tl">市</th>
+                                <td style="border: 0px solid transparent" class="tr" id="city">${item.city}</td>
+                            </tr>
+                            <tr>
+                                <th style="border: 0px solid transparent" class="tl">县/区</th>
+                                <td style="border: 0px solid transparent" class="tr" id="county">${item.county}</td>
+                            </tr>
+                            <tr>
+                                <th style="border: 0px solid transparent" class="tl">详细地址</th>
+                                <td style="border: 0px solid transparent" class="tr"
+                                    id="detailaddr">${item.detailaddr}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button class="templatemo-blue-button" name="changeAddr"><h5>修改地址</h5></button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="templatemo-blue-button finish-btn" name="deleteAddr"><h5>删除地址</h5></button>
+                    </div>
                 </div>
             </div>
-        </div>
-</c:forEach>
-       <%-- <div class="mdl-grid demo-content" >
-            <div class="demo-charts mdl-color--white  mdl-shadow--2dp mdl-cell mdl-cell--2-col mdl-grid">
-                <button class="templatemo-blue-button" name="insertAddr"><h5>添加地址</h5></button>
-            </div>
-        </div>--%>
+        </c:forEach>
+        <%-- <div class="mdl-grid demo-content" >
+             <div class="demo-charts mdl-color--white  mdl-shadow--2dp mdl-cell mdl-cell--2-col mdl-grid">
+                 <button class="templatemo-blue-button" name="insertAddr"><h5>添加地址</h5></button>
+             </div>
+         </div>--%>
     </main>
 </div>
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>

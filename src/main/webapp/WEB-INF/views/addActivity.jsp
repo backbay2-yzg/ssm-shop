@@ -16,7 +16,8 @@
     <title>后台管理</title>
     <meta name="description" content="">
     <meta name="author" content="templatemo">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet'
+          type='text/css'>
     <link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/templatemo-style.css" rel="stylesheet">
@@ -59,7 +60,8 @@
             <div class="templatemo-content-widget white-bg">
                 <h2 class="margin-bottom-10">增加活动</h2>
                 <p>活动的一些基本信息</p>
-                <form action="${pageContext.request.contextPath}/admin/activity/addResult" class="templatemo-login-form" method="post">
+                <form action="${pageContext.request.contextPath}/admin/activity/addResult" class="templatemo-login-form"
+                      method="post">
                     <div class="row form-group">
                         <div class="col-lg-6 form-group">
                             <label class="control-label" for="inputWithSuccess">活动名称</label>
@@ -67,28 +69,33 @@
                         </div>
                         <div class="col-lg-6 form-group">
                             <label class="control-label" for="inputWithDiscount">折扣</label>
-                            <input type="number" class="form-control" id="inputWithDiscount" name="discount" step="0.01">
+                            <input type="number" class="form-control" id="inputWithDiscount" name="discount"
+                                   step="0.01">
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col-lg-6 form-group">
                             <label class="control-label" for="inputWithFullprice">满</label>
-                            <input type="number" class="form-control" id="inputWithFullprice" name="fullprice" placeholder="￥满减">
+                            <input type="number" class="form-control" id="inputWithFullprice" name="fullprice"
+                                   placeholder="￥满减">
                         </div>
                         <div class="col-lg-6 form-group">
                             <label class="control-label" for="inputWithReduceprice">减</label>
-                            <input type="number" class="form-control" id="inputWithReduceprice" name="reduceprice" placeholder="￥满减">
+                            <input type="number" class="form-control" id="inputWithReduceprice" name="reduceprice"
+                                   placeholder="￥满减">
                         </div>
                     </div>
 
                     <div class="row form-group">
                         <div class="col-lg-6 form-group">
                             <label class="control-label" for="inputWithFullnum">满</label>
-                            <input type="number" class="form-control" id="inputWithFullnum" name="fullnum" placeholder="满免">
+                            <input type="number" class="form-control" id="inputWithFullnum" name="fullnum"
+                                   placeholder="满免">
                         </div>
                         <div class="col-lg-6 form-group">
                             <label class="control-label" for="inputWithReducenum">免</label>
-                            <input type="number" class="form-control" id="inputWithReducenum" name="reducenum" placeholder="满免">
+                            <input type="number" class="form-control" id="inputWithReducenum" name="reducenum"
+                                   placeholder="满免">
                         </div>
                     </div>
 
@@ -111,9 +118,12 @@
 </div>
 
 <!-- JS -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.2.min.js"></script>        <!-- jQuery -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-filestyle.min.js"></script>  <!-- http://markusslima.github.io/bootstrap-filestyle/ -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/templatemo-script.js"></script>        <!-- Templatemo Script -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.2.min.js"></script>
+<!-- jQuery -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-filestyle.min.js"></script>
+<!-- http://markusslima.github.io/bootstrap-filestyle/ -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/templatemo-script.js"></script>
+<!-- Templatemo Script -->
 <c:if test="${!empty msg}">
     <script type="text/javascript">
         $(document).ready(function () {

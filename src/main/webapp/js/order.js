@@ -4,8 +4,8 @@
 $(document).ready(function () {
     $("#confirm-orders").click(function () {
         // alert("safd");
-        var selectAddr =  $('input:radio[name="addressid"]:checked').val();
-        if(selectAddr == null) {
+        var selectAddr = $('input:radio[name="addressid"]:checked').val();
+        if (selectAddr == null) {
             swal("请先添加地址");
             return;
         }

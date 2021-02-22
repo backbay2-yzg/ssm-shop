@@ -40,7 +40,8 @@
         </div>
 
         <%--确认收货地址--%>
-        <h4 class="header-border h4-mar">确认收货地址<a href="${pageContext.request.contextPath}/info/address" class="pull-right manage-a">管理收货地址</a></h4>
+        <h4 class="header-border h4-mar">确认收货地址<a href="${pageContext.request.contextPath}/info/address"
+                                                  class="pull-right manage-a">管理收货地址</a></h4>
 
         <%--<form action="" method="post">--%>
         <div class="address">
@@ -49,7 +50,7 @@
                     <label>
                         <input type="radio" name="addressid" class="address-check" value="${addItem.addressid}"
                                checked>
-                            ${addItem.province} ${addItem.city} ${addItem.county}  ${addItem.detailaddr}（${addItem.conname}收）${addItem.contel}
+                            ${addItem.province} ${addItem.city} ${addItem.county} ${addItem.detailaddr}（${addItem.conname}收）${addItem.contel}
                     </label>
                 </div>
             </c:forEach>
@@ -96,7 +97,7 @@
                                         </td>
                                         <td class="product-price"><span
                                                 class="amount-list amount-list-2">￥${goods.newPrice}</span></td>
-                                        <%--<c:set value="${oldTotalPrice+goods.price*goods.num*goods.activity.discount}" var="oldTotalPrice"/>--%>
+                                            <%--<c:set value="${oldTotalPrice+goods.price*goods.num*goods.activity.discount}" var="oldTotalPrice"/>--%>
                                     </tr>
                                 </c:forEach>
 

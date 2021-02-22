@@ -23,7 +23,7 @@ import java.util.Random;
  */
 @Controller
 public class VerificationCodeImgController {
-//    @RequestMapping("/verificationcodeimg")
+    //    @RequestMapping("/verificationcodeimg")
 //    public ModelAndView verificationcodeimg(HttpServletResponse response, HttpSession session) throws IOException {
 //        ModelAndView verificationcodeimg = new ModelAndView();
 //        Verificate verificate = new Verificate();
@@ -34,6 +34,7 @@ public class VerificationCodeImgController {
 //        return verificationcodeimg;
 //    }
     private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     /**
      * 获取验证码
      *
@@ -42,7 +43,7 @@ public class VerificationCodeImgController {
      */
     @RequestMapping("/verificationcodeimg")
     public void verificationcodeimg(HttpServletResponse response, HttpSession session) {
-        drawImg(response,session);
+        drawImg(response, session);
     }
 
     /**

@@ -25,12 +25,15 @@
             left: 80% !important;
             top: 70% !important;
         }
-        .data>ul {
+
+        .data > ul {
             padding: 0;
         }
+
         .page-div {
             margin-top: 10px;
         }
+
         .page-info {
             padding: 35px 35px 35px 55px;
         }
@@ -56,7 +59,9 @@
                         <c:forEach items="${pageInfo.list}" var="goods">
                             <li class="data-item-li">
                                 <div class="to-big">
-                                    <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.goodsid}"> <img src="/shopimage/${goods.imagePaths[0].path}" width="260px" height="260px" alt=""/>
+                                    <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.goodsid}"> <img
+                                            src="/shopimage/${goods.imagePaths[0].path}" width="260px" height="260px"
+                                            alt=""/>
                                     </a>
                                 </div>
                                 <p class="text-right">
@@ -96,7 +101,8 @@
 
                                 <c:if test="${pageInfo.hasPreviousPage}">
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.prePage}" aria-label="Previous">
+                                        <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.prePage}"
+                                           aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                         </a>
                                     </li>
@@ -104,7 +110,8 @@
 
                                 <c:if test="${!pageInfo.hasPreviousPage}">
                                     <li class="disabled">
-                                        <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.prePage}" aria-label="Previous">
+                                        <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.prePage}"
+                                           aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                         </a>
                                     </li>
@@ -112,16 +119,21 @@
 
                                 <c:forEach items="${pageInfo.navigatepageNums}" var="pageNums">
                                     <c:if test="${pageNums == pageInfo.pageNum}">
-                                        <li class="active"><a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageNums}">${pageNums}</a></li>
+                                        <li class="active"><a
+                                                href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageNums}">${pageNums}</a>
+                                        </li>
                                     </c:if>
                                     <c:if test="${pageNums != pageInfo.pageNum}">
-                                        <li><a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageNums}">${pageNums}</a></li>
+                                        <li>
+                                            <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageNums}">${pageNums}</a>
+                                        </li>
                                     </c:if>
                                 </c:forEach>
 
                                 <c:if test="${pageInfo.hasNextPage}">
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.nextPage}" aria-label="Next">
+                                        <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.nextPage}"
+                                           aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                         </a>
                                     </li>
@@ -129,7 +141,8 @@
 
                                 <c:if test="${!pageInfo.hasNextPage}">
                                     <li class="disabled">
-                                        <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.nextPage}" aria-label="Next">
+                                        <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.nextPage}"
+                                           aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                         </a>
                                     </li>

@@ -30,7 +30,7 @@ public class ActivityController {
     GoodsService goodsService;
 
     @RequestMapping("/show")
-    public String showActivity(@RequestParam(value = "page",defaultValue = "1") Integer pn, Model model, HttpSession session) {
+    public String showActivity(@RequestParam(value = "page", defaultValue = "1") Integer pn, Model model, HttpSession session) {
 
         Admin admin = (Admin) session.getAttribute("admin");
         if (admin == null) {
@@ -46,7 +46,7 @@ public class ActivityController {
         List<Activity> activityList = activityService.getAllActivity(activityExample);
 
         //显示几个页号
-        PageInfo page = new PageInfo(activityList,5);
+        PageInfo page = new PageInfo(activityList, 5);
         model.addAttribute("pageInfo", page);
 
         return "activity";
@@ -54,7 +54,7 @@ public class ActivityController {
 
     @RequestMapping("/showjson")
     @ResponseBody
-    public Msg showActivityJson(@RequestParam(value = "page",defaultValue = "1") Integer pn, Model model , HttpSession session) {
+    public Msg showActivityJson(@RequestParam(value = "page", defaultValue = "1") Integer pn, Model model, HttpSession session) {
 
         Admin admin = (Admin) session.getAttribute("admin");
         if (admin == null) {
@@ -66,7 +66,7 @@ public class ActivityController {
 
         List<Activity> activityList = activityService.getAllActivity(activityExample);
 
-        return Msg.success("获取活动信息成功").add("activity",activityList);
+        return Msg.success("获取活动信息成功").add("activity", activityList);
     }
 
     @RequestMapping("/add")

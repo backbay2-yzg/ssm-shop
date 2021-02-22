@@ -8,7 +8,7 @@
     </settings>
 
     <typeAliases>
-        <package name="com.backbay2.shop.pojo" />
+        <package name="com.backbay2.shop.pojo"/>
     </typeAliases>
 
     <!--分页插件-->

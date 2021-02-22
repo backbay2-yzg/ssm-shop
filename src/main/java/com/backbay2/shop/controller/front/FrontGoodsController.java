@@ -39,17 +39,17 @@ public class FrontGoodsController {
     @Autowired
     private ActivityService activityService;
 
-    @RequestMapping(value = "/detail",method = RequestMethod.GET)
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public String detailGoods(Integer goodsid, Model model, HttpSession session) {
 
-        if(goodsid == null) {
+        if (goodsid == null) {
             return "redirect:/main";
         }
 
         User user = (User) session.getAttribute("user");
 
         //要传回的数据存在HashMap中
-        Map<String,Object> goodsInfo = new HashMap<String,Object>();
+        Map<String, Object> goodsInfo = new HashMap<String, Object>();
 
         //查询商品的基本信息
         Goods goods = goodsService.selectById(goodsid);
@@ -81,27 +81,26 @@ public class FrontGoodsController {
         goodsInfo.put("goods", goods);
         goodsInfo.put("cate", category);
         goodsInfo.put("image", imagePath);
-        model.addAttribute("goodsInfo",goodsInfo);
+        model.addAttribute("goodsInfo", goodsInfo);
 //        model.addAllAttributes(goodsInfo);
 
         //评论信息
-        CommentExample commentExample=new CommentExample();
+        CommentExample commentExample = new CommentExample();
         commentExample.or().andGoodsidEqualTo(goods.getGoodsid());
-        List<Comment> commentList=commentService.selectByExample(commentExample);
-        for (Integer i=0;i<commentList.size();i++)
-        {
-            Comment comment=commentList.get(i);
-            User commentUser=userService.selectByPrimaryKey(comment.getUserid());
+        List<Comment> commentList = commentService.selectByExample(commentExample);
+        for (Integer i = 0; i < commentList.size(); i++) {
+            Comment comment = commentList.get(i);
+            User commentUser = userService.selectByPrimaryKey(comment.getUserid());
             comment.setUserName(commentUser.getUsername());
-            commentList.set(i,comment);
+            commentList.set(i, comment);
         }
-        model.addAttribute("commentList",commentList);
+        model.addAttribute("commentList", commentList);
 
         return "detail";
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public String searchGoods(@RequestParam(value = "page",defaultValue = "1") Integer pn, String keyword, Model model, HttpSession session) {
+    public String searchGoods(@RequestParam(value = "page", defaultValue = "1") Integer pn, String keyword, Model model, HttpSession session) {
         User user = (User) session.getAttribute("user");
 
         //一页显示几个数据
@@ -137,7 +136,7 @@ public class FrontGoodsController {
 
 
         //显示几个页号
-        PageInfo page = new PageInfo(goodsList,5);
+        PageInfo page = new PageInfo(goodsList, 5);
         model.addAttribute("pageInfo", page);
         model.addAttribute("keyword", keyword);
 
@@ -149,7 +148,7 @@ public class FrontGoodsController {
     public Msg collectGoods(Integer goodsid, HttpSession session) {
         //取登录用户信息,未登录重定向至登录页面
         User user = (User) session.getAttribute("user");
-        if(user == null) {
+        if (user == null) {
             return Msg.fail("收藏失败");
         }
 
@@ -173,13 +172,13 @@ public class FrontGoodsController {
         }
 
         //删除收藏
-        goodsService.deleteFavByKey(new FavoriteKey(user.getUserid(),goodsid));
+        goodsService.deleteFavByKey(new FavoriteKey(user.getUserid(), goodsid));
 
         return Msg.success("取消收藏成功");
     }
 
     @RequestMapping("/category")
-    public String getCateGoods(String cate, @RequestParam(value = "page",defaultValue = "1") Integer pn, Model model, HttpSession session) {
+    public String getCateGoods(String cate, @RequestParam(value = "page", defaultValue = "1") Integer pn, Model model, HttpSession session) {
         User user = (User) session.getAttribute("user");
 
         //一页显示几个数据
@@ -229,24 +228,23 @@ public class FrontGoodsController {
 
 
         //显示几个页号
-        PageInfo page = new PageInfo(goodsList,5);
+        PageInfo page = new PageInfo(goodsList, 5);
         model.addAttribute("pageInfo", page);
         model.addAttribute("cate", cate);
         return "category";
     }
 
 
-
     @RequestMapping("/comment")
     @ResponseBody
-    public Msg comment(Comment comment, HttpServletRequest request){
-        HttpSession session=request.getSession();
-        User user=(User) session.getAttribute("user");
+    public Msg comment(Comment comment, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
         if (user == null) {
             return Msg.fail("评论失败");
         }
         comment.setUserid(user.getUserid());
-        Date date=new Date();
+        Date date = new Date();
         comment.setCommenttime(date);
         commentService.insertSelective(comment);
         return Msg.success("评论成功");

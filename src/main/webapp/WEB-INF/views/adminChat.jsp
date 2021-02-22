@@ -29,10 +29,12 @@
         .templatemo-content-widget {
             padding: 30px 0 0 0 !important;
         }
+
         .white-bg {
             /*background-color: #f8ffff !important;*/
             background-color: #fbffff !important;
         }
+
         .templatemo-content-container {
             padding: 0 !important;
         }

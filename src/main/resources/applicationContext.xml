@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
@@ -13,7 +13,8 @@
     <!--xmlns:context="http://www.springframework.org/schema/context"-->
     <!--除了控制器都扫描，和SpringMVC相反-->
     <context:component-scan base-package="com.backbay2.shop">
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"></context:exclude-filter>
     </context:component-scan>
     <!--Spring的配置文件，这里主要配置和业务逻辑有关的-->
     <!--数据源，事务控制。。-->
@@ -54,9 +55,9 @@
     <!--开启基于注解的事务，使用xml配置形式的事务（必要主要的都是使用配置式）-->
     <aop:config>
         <!--切入点表达式-->
-        <aop:pointcut expression="execution(* com.backbay2.shop.service..*(..))" id="txPoint" />
+        <aop:pointcut expression="execution(* com.backbay2.shop.service..*(..))" id="txPoint"/>
         <!--配置事务增强-->
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>
     </aop:config>
 
     <!--配置事务增强，事务如何切入-->

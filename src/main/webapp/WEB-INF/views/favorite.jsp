@@ -38,7 +38,8 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/infostyle.css">
@@ -59,47 +60,51 @@
             margin-bottom: 40px;
             z-index: 900;
         }
+
         .templatemo-blue-button {
             background-color: #39ADB4;
             border: none;
             color: white;
         }
-        .content{
+
+        .content {
             margin: 23px 1px;
         }
+
         .page-info {
             padding: 30px 30px 30px 50px;
         }
-        .like-button{
+
+        .like-button {
             left: 75% !important;
             top: 65% !important;
         }
     </style>
     <script>
         $(document).ready(function () {
-            $(".data-item-li").hover(function(){
+            $(".data-item-li").hover(function () {
                 //需处理显示哪个按钮
                 // $(this).find(".like-button").css("display","inline-block");
                 $(this).find(".like-button").show();
-            },function(){
+            }, function () {
                 $(this).find(".like-button").hide();
             });
             $(".like-button").click(function () {
                 var goodsId = $(this).attr("data-id");
                 //取消收藏
                 $.ajax({
-                    url:"/shop/deleteCollect",
-                    type:"POST",
-                    data:{
-                        goodsid:goodsId
+                    url: "/shop/deleteCollect",
+                    type: "POST",
+                    data: {
+                        goodsid: goodsId
                     },
-                    success:function (result) {
+                    success: function (result) {
                         //取消收藏成功
-                        if(result.code === 100){
+                        if (result.code === 100) {
                             location.reload();
                         }
                     },
-                    error:function () {
+                    error: function () {
                         alert("取消收藏失败");
                     }
                 });
@@ -143,11 +148,16 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/main"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>主页</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/information"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>个人信息</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/list"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>订单管理</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/address"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>地址管理</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/favorite"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>我的收藏</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/main"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>主页</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/information"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>个人信息</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/list"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>订单管理</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/address"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>地址管理</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/favorite"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>我的收藏</a>
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
@@ -160,7 +170,9 @@
                                 <c:forEach items="${pageInfo.list}" var="goods">
                                     <li class="data-item-li">
                                         <div class="to-big">
-                                            <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.goodsid}"> <img src="/shopimage/${goods.imagePaths[0].path}" width="240px" height="240px" alt=""/>
+                                            <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.goodsid}">
+                                                <img src="/shopimage/${goods.imagePaths[0].path}" width="240px"
+                                                     height="240px" alt=""/>
                                             </a>
                                         </div>
                                         <p class="text-right">
@@ -195,7 +207,8 @@
 
                                         <c:if test="${pageInfo.hasPreviousPage}">
                                             <li>
-                                                <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.prePage}" aria-label="Previous">
+                                                <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.prePage}"
+                                                   aria-label="Previous">
                                                     <span aria-hidden="true">&laquo;</span>
                                                 </a>
                                             </li>
@@ -203,7 +216,8 @@
 
                                         <c:if test="${!pageInfo.hasPreviousPage}">
                                             <li class="disabled">
-                                                <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.prePage}" aria-label="Previous">
+                                                <a href="${pageContext.request.contextPath}/search?keyword=${keyword}&page=${pageInfo.prePage}"
+                                                   aria-label="Previous">
                                                     <span aria-hidden="true">&laquo;</span>
                                                 </a>
                                             </li>
@@ -211,16 +225,21 @@
 
                                         <c:forEach items="${pageInfo.navigatepageNums}" var="pageNums">
                                             <c:if test="${pageNums == pageInfo.pageNum}">
-                                                <li class="active"><a href="${pageContext.request.contextPath}/info/favorite?page=${pageNums}">${pageNums}</a></li>
+                                                <li class="active"><a
+                                                        href="${pageContext.request.contextPath}/info/favorite?page=${pageNums}">${pageNums}</a>
+                                                </li>
                                             </c:if>
                                             <c:if test="${pageNums != pageInfo.pageNum}">
-                                                <li><a href="${pageContext.request.contextPath}/info/favorite?page=${pageNums}">${pageNums}</a></li>
+                                                <li>
+                                                    <a href="${pageContext.request.contextPath}/info/favorite?page=${pageNums}">${pageNums}</a>
+                                                </li>
                                             </c:if>
                                         </c:forEach>
 
                                         <c:if test="${pageInfo.hasNextPage}">
                                             <li>
-                                                <a href="${pageContext.request.contextPath}/info/favorite?page=${pageInfo.nextPage}" aria-label="Next">
+                                                <a href="${pageContext.request.contextPath}/info/favorite?page=${pageInfo.nextPage}"
+                                                   aria-label="Next">
                                                     <span aria-hidden="true">&raquo;</span>
                                                 </a>
                                             </li>
@@ -228,7 +247,8 @@
 
                                         <c:if test="${!pageInfo.hasNextPage}">
                                             <li class="disabled">
-                                                <a href="${pageContext.request.contextPath}/info/favorite?page=${pageInfo.nextPage}" aria-label="Next">
+                                                <a href="${pageContext.request.contextPath}/info/favorite?page=${pageInfo.nextPage}"
+                                                   aria-label="Next">
                                                     <span aria-hidden="true">&raquo;</span>
                                                 </a>
                                             </li>

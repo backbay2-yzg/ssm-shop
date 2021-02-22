@@ -25,11 +25,10 @@ public class Order {
     private Integer addressid;
 
     private List<Goods> goodsInfo;
+    private Address address;
 
     public Order() {
     }
-
-    private Address address;
 
     public Order(Integer orderid, Integer userid, Date ordertime, Float oldprice, Float newprice, Boolean ispay, Boolean issend, Boolean isreceive, Boolean iscomplete, Integer addressid, List<Goods> goodsInfo, Address address) {
         this.orderid = orderid;

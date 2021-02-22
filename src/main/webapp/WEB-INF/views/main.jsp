@@ -231,7 +231,8 @@
                                     </dt>
                                     <dd>
                                         <a href="${pageContext.request.contextPath}/category?cate=手机壳">手机壳</a> <a
-                                            href="${pageContext.request.contextPath}/category?cate=充电器">充电器</a> <a href="">电池</a> <a
+                                            href="${pageContext.request.contextPath}/category?cate=充电器">充电器</a> <a
+                                            href="">电池</a> <a
                                             href="${pageContext.request.contextPath}/category?cate=耳机">耳机</a>
                                     </dd>
                                 </dl>
@@ -278,7 +279,8 @@
                                     </dt>
                                     <dd>
                                         <a href="${pageContext.request.contextPath}/category?cate=洗发水">洗发水</a> <a
-                                            href="${pageContext.request.contextPath}/category?cate=沐浴露">沐浴露</a> <a href="">洗面奶</a> <a
+                                            href="${pageContext.request.contextPath}/category?cate=沐浴露">沐浴露</a> <a
+                                            href="">洗面奶</a> <a
                                             href="">洗手液</a>
                                     </dd>
                                 </dl>
@@ -298,14 +300,16 @@
                                         <a href="${pageContext.request.contextPath}/category?cate=家居">家居</a>
                                     </dt>
                                     <dd>
-                                        <a href="${pageContext.request.contextPath}/category?cate=书架">书架</a><a href="${pageContext.request.contextPath}/category?cate=鞋柜">鞋柜</a>
+                                        <a href="${pageContext.request.contextPath}/category?cate=书架">书架</a><a
+                                            href="${pageContext.request.contextPath}/category?cate=鞋柜">鞋柜</a>
                                         <a href="${pageContext.request.contextPath}/category?cate=衣架">衣架</a> <a
                                             href="${pageContext.request.contextPath}/category?cate=台灯">台灯</a>
                                     </dd>
                                 </dl>
                             </div>
                         </li>
-                        <li class="list-group-item"><a href="${pageContext.request.contextPath}/category?cate=闲置书籍">书籍</a>
+                        <li class="list-group-item"><a
+                                href="${pageContext.request.contextPath}/category?cate=闲置书籍">书籍</a>
                             <div class="sort-detail">
                                 <dl class="dl-hor">
                                     <dt>
@@ -400,7 +404,8 @@
                                 </dl>
                             </div>
                         </li>
-                        <li class="list-group-item"><a href="${pageContext.request.contextPath}/category?cate=装饰品">装饰品</a>
+                        <li class="list-group-item"><a
+                                href="${pageContext.request.contextPath}/category?cate=装饰品">装饰品</a>
                             <div class="sort-detail">
                                 <dl class="dl-hor">
                                     <dt>
@@ -449,7 +454,8 @@
                                 </dl>
                             </div>
                         </li>
-                        <li class="list-group-item"><a href="${pageContext.request.contextPath}/category?cate=学习用品">学习用品</a>
+                        <li class="list-group-item"><a
+                                href="${pageContext.request.contextPath}/category?cate=学习用品">学习用品</a>
                             <div class="sort-detail">
                                 <dl class="dl-hor">
                                     <dt>
@@ -485,7 +491,8 @@
                                 </dl>
                             </div>
                         </li>
-                        <li class="list-group-item"><a href="${pageContext.request.contextPath}/category?cate=闲置百货">百货</a>
+                        <li class="list-group-item"><a
+                                href="${pageContext.request.contextPath}/category?cate=闲置百货">百货</a>
                             <div class="sort-detail">
                                 <dl class="dl-hor">
                                     <dt>
@@ -604,8 +611,9 @@
                             <c:forEach items="${digGoods}" var="goods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.goodsid}"><img src="/shopimage/${goods.imagePaths[0].path}" alt=""
-                                                        width="200" height="200"/>
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.goodsid}"><img
+                                                src="/shopimage/${goods.imagePaths[0].path}" alt=""
+                                                width="200" height="200"/>
                                         </a>
                                     </div>
                                     <p class="text-right">
@@ -653,9 +661,10 @@
                             <c:forEach items="${houseGoods}" var="housegoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${housegoods.goodsid}"> <img
-                                                src="/shopimage/${housegoods.imagePaths[0].path}" alt=""
-                                                width="200" height="200">
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${housegoods.goodsid}">
+                                            <img
+                                                    src="/shopimage/${housegoods.imagePaths[0].path}" alt=""
+                                                    width="200" height="200">
                                         </a>
                                     </div>
                                     <p class="text-right">
@@ -703,9 +712,10 @@
                             <c:forEach items="${colGoods}" var="colgoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${colgoods.goodsid}"> <img
-                                                src="/shopimage/${colgoods.imagePaths[0].path}" alt=""
-                                                width="200" height="200">
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${colgoods.goodsid}">
+                                            <img
+                                                    src="/shopimage/${colgoods.imagePaths[0].path}" alt=""
+                                                    width="200" height="200">
                                         </a>
                                     </div>
                                     <p class="text-right">
@@ -752,9 +762,10 @@
                             <c:forEach items="${bookGoods}" var="bookgoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${bookgoods.goodsid}"> <img
-                                                src="/shopimage/${bookgoods.imagePaths[0].path}" alt=""
-                                                width="200" height="200">
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${bookgoods.goodsid}">
+                                            <img
+                                                    src="/shopimage/${bookgoods.imagePaths[0].path}" alt=""
+                                                    width="200" height="200">
                                         </a>
                                     </div>
                                     <p class="text-right">

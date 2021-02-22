@@ -29,13 +29,19 @@ import java.util.List;
 @Controller
 public class CustomerController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private AddressService addressService;
+    @Autowired
+    private OrderService orderService;
+    @Autowired
+    private GoodsService goodsService;
+
     @RequestMapping("/login")
     public String loginView() {
         return "login";
     }
-
-    @Autowired
-    private UserService userService;
 
     @RequestMapping("/register")
     public String register() {
@@ -59,12 +65,11 @@ public class CustomerController {
         }
     }
 
-
     @RequestMapping("/loginconfirm")
     public String loginConfirm(User user, Model loginResult, HttpServletRequest request, @RequestParam("confirmlogo") String confirmlogo) {
         HttpSession session = request.getSession();
         String verificationCode = (String) session.getAttribute("certCode");
-        logger.debug(verificationCode+"--"+confirmlogo);
+        logger.debug(verificationCode + "--" + confirmlogo);
         if (!confirmlogo.equals(verificationCode)) {
             loginResult.addAttribute("errorMsg", "验证码错误");
             return "login";
@@ -122,9 +127,6 @@ public class CustomerController {
         }
     }
 
-    @Autowired
-    private AddressService addressService;
-
     @RequestMapping("/info/address")
     public String address(HttpServletRequest request, Model addressModel) {
         HttpSession session = request.getSession();
@@ -164,12 +166,6 @@ public class CustomerController {
         addressService.insertSelective(address);
         return Msg.success("添加成功");
     }
-
-    @Autowired
-    private OrderService orderService;
-
-    @Autowired
-    private GoodsService goodsService;
 
     @RequestMapping("/info/list")
     public String list(HttpServletRequest request, Model orderModel) {

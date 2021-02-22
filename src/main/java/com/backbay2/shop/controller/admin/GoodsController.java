@@ -31,6 +31,8 @@ public class GoodsController {
 
     @Autowired
     private GoodsService goodsService;
+    @Autowired
+    private CateService cateService;
 
     @RequestMapping("/showjson")
     @ResponseBody
@@ -53,7 +55,7 @@ public class GoodsController {
     }
 
     @RequestMapping("/show")
-    public String goodsManage(@RequestParam(value = "page",defaultValue = "1") Integer pn, HttpServletResponse response, Model model, HttpSession session) throws IOException {
+    public String goodsManage(@RequestParam(value = "page", defaultValue = "1") Integer pn, HttpServletResponse response, Model model, HttpSession session) throws IOException {
         Admin admin = (Admin) session.getAttribute("admin");
         if (admin == null) {
             return "redirect:/admin/login";
@@ -65,7 +67,7 @@ public class GoodsController {
         PageInfo page = new PageInfo(employees,5);
         model.addAttribute("pageInfo", page);*/
         List<Category> categoryList = cateService.selectByExample(new CategoryExample());
-        model.addAttribute("categoryList",categoryList);
+        model.addAttribute("categoryList", categoryList);
 
         return "adminAllGoods";
     }
@@ -77,13 +79,12 @@ public class GoodsController {
             return "redirect:/admin/login";
         }
 
-        if(!msg.equals("")) {
+        if (!msg.equals("")) {
             model.addAttribute("msg", msg);
         }
 
         List<Category> categoryList = cateService.selectByExample(new CategoryExample());
-        model.addAttribute("categoryList",categoryList);
-
+        model.addAttribute("categoryList", categoryList);
 
 
         //还需要查询分类传给addGoods页面
@@ -97,14 +98,14 @@ public class GoodsController {
         if (admin == null) {
             return Msg.fail("请先登录");
         }
-       /* goods.setGoodsid(goodsid);*/
+        /* goods.setGoodsid(goodsid);*/
         goodsService.updateGoodsById(goods);
         return Msg.success("更新成功!");
     }
 
     @RequestMapping(value = "/delete/{goodsid}", method = RequestMethod.DELETE)
     @ResponseBody
-    public Msg deleteGoods(@PathVariable("goodsid")Integer goodsid) {
+    public Msg deleteGoods(@PathVariable("goodsid") Integer goodsid) {
         goodsService.deleteGoodsById(goodsid);
         return Msg.success("删除成功!");
     }
@@ -121,28 +122,28 @@ public class GoodsController {
         goods.setActivityid(1);
         goodsService.addGoods(goods);
 
-        for(MultipartFile multipartFile:fileToUpload){
-            if (multipartFile != null){
+        for (MultipartFile multipartFile : fileToUpload) {
+            if (multipartFile != null) {
 
                 String realPath = request.getSession().getServletContext().getRealPath("/");
 //                    String realPath = request.getContextPath();
-               System.out.println(realPath);
+                System.out.println(realPath);
                 //图片路径=项目在本地磁盘的路径\shop\target\shop\shopimage
                 String imageName = UUID.randomUUID().toString().replace("-", "") + multipartFile.getOriginalFilename();
-                String imagePath = realPath.substring(0,realPath.indexOf("shop")) + "shopimage" + File.separatorChar + imageName;
+                String imagePath = realPath.substring(0, realPath.indexOf("shop")) + "shopimage" + File.separatorChar + imageName;
 //                String imagePath = realPath + "shopimage\\" + imageName;
                 System.out.println(imagePath);
                 //负载均衡时使用的图片路径
 //                String imagePath = "D:\\Code\\Apache-Tomcat-v8.0\\webapps\\shopimage\\" + imageName;
 //                String imagePath = UUID.randomUUID().toString().replace("-", "") + multipartFile.getOriginalFilename();
                 //把图片路径存入数据库中
-                goodsService.addImagePath(new ImagePath(null, goods.getGoodsid(),imageName));
+                goodsService.addImagePath(new ImagePath(null, goods.getGoodsid(), imageName));
                 //存图片
                 multipartFile.transferTo(new File(imagePath));
             }
         }
 
-        redirectAttributes.addFlashAttribute("succeseMsg","商品添加成功!");
+        redirectAttributes.addFlashAttribute("succeseMsg", "商品添加成功!");
 
         return "redirect:/admin/goods/add";
     }
@@ -164,44 +165,37 @@ public class GoodsController {
         return "addCategory";
     }
 
-    @Autowired
-    private CateService cateService;
-
     @RequestMapping("/addCategoryResult")
-    public String addCategoryResult(Category category,Model addCategoryResult,RedirectAttributes redirectAttributes){
-        List<Category> categoryList=new ArrayList<>();
-        CategoryExample categoryExample=new CategoryExample();
+    public String addCategoryResult(Category category, Model addCategoryResult, RedirectAttributes redirectAttributes) {
+        List<Category> categoryList = new ArrayList<>();
+        CategoryExample categoryExample = new CategoryExample();
         categoryExample.or().andCatenameEqualTo(category.getCatename());
-        categoryList=cateService.selectByExample(categoryExample);
-        if (!categoryList.isEmpty())
-        {
-            redirectAttributes.addAttribute("succeseMsg","分类已存在");
+        categoryList = cateService.selectByExample(categoryExample);
+        if (!categoryList.isEmpty()) {
+            redirectAttributes.addAttribute("succeseMsg", "分类已存在");
             return "redirect:/admin/goods/addCategory";
-        }
-        else {
+        } else {
             cateService.insertSelective(category);
-            redirectAttributes.addFlashAttribute("succeseMsg","分类添加成功!");
+            redirectAttributes.addFlashAttribute("succeseMsg", "分类添加成功!");
             return "redirect:/admin/goods/addCategory";
         }
     }
 
     @RequestMapping("/saveCate")
     @ResponseBody
-    public Msg saveCate(Category category){
-        CategoryExample categoryExample=new CategoryExample();
+    public Msg saveCate(Category category) {
+        CategoryExample categoryExample = new CategoryExample();
         categoryExample.or().andCatenameEqualTo(category.getCatename());
-        List<Category> categoryList=cateService.selectByExample(categoryExample);
-        if (categoryList.isEmpty())
-        {
+        List<Category> categoryList = cateService.selectByExample(categoryExample);
+        if (categoryList.isEmpty()) {
             cateService.updateByPrimaryKeySelective(category);
             return Msg.success("更新成功");
-        }
-        else return Msg.success("名字已经存在");
+        } else return Msg.success("名字已经存在");
     }
 
     @RequestMapping("/deleteCate")
     @ResponseBody
-    public Msg deleteCate(Category category){
+    public Msg deleteCate(Category category) {
         cateService.deleteByPrimaryKey(category.getCateid());
         return Msg.success("删除成功");
     }

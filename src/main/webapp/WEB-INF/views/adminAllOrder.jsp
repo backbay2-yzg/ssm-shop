@@ -68,12 +68,14 @@
                                     <div class="order-info margin-bottom-10">
                                         <div class="head-div">订单信息</div>
                                         <div>
-                                            <table id="orderinfo" class="table table-striped table-bordered templatemo-user-table goods-table">
+                                            <table id="orderinfo"
+                                                   class="table table-striped table-bordered templatemo-user-table goods-table">
                                                 <thead>
                                                 <tr>
                                                     <td><a href="" class="white-text templatemo-sort-by">订单号<span
                                                             class="caret"></span></a></td>
-                                                    <td><a href="" class="white-text templatemo-sort-by">用户<span class="caret"></span></a>
+                                                    <td><a href="" class="white-text templatemo-sort-by">用户<span
+                                                            class="caret"></span></a>
                                                     </td>
                                                     <td><a href="" class="white-text templatemo-sort-by">原价<span
                                                             class="caret"></span></a></td>
@@ -109,12 +111,14 @@
                                     <div class="goods-info margin-bottom-10">
                                         <div class="head-div">商品信息</div>
                                         <div>
-                                            <table id="goodsinfo" class="table table-striped table-bordered templatemo-user-table goods-table">
+                                            <table id="goodsinfo"
+                                                   class="table table-striped table-bordered templatemo-user-table goods-table">
                                                 <thead>
                                                 <tr>
                                                     <td><a href="" class="white-text templatemo-sort-by">商品id<span
                                                             class="caret"></span></a></td>
-                                                    <td><a href="" class="white-text templatemo-sort-by">商品名<span class="caret"></span></a>
+                                                    <td><a href="" class="white-text templatemo-sort-by">商品名<span
+                                                            class="caret"></span></a>
                                                     </td>
                                                     <td><a href="" class="white-text templatemo-sort-by">价格<span
                                                             class="caret"></span></a></td>
@@ -133,7 +137,9 @@
                                                         <td>￥${goods.price}</td>
                                                         <td>${goods.num}</td>
                                                             <%--<td>234&lt;%&ndash;${goods.detailcate}&ndash;%&gt;</td>--%>
-                                                        <td><a href="${pageContext.request.contextPath}/detail?goodsid=${goods.goodsid}" class="templatemo-link">详情</a></td>
+                                                        <td>
+                                                            <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.goodsid}"
+                                                               class="templatemo-link">详情</a></td>
                                                             <%--<td>
                                                                 <button href="" class="templatemo-edit-btn">编辑</button>
                                                             </td>
@@ -148,7 +154,8 @@
                                         </div>
                                     </div>
                                     <div class="margin-bottom-10">
-                                        <a href="${pageContext.request.contextPath}/admin/order/sendGoods?orderid=${orderInfo.orderid}" class="templatemo-edit-btn pull-right">发货</a>
+                                        <a href="${pageContext.request.contextPath}/admin/order/sendGoods?orderid=${orderInfo.orderid}"
+                                           class="templatemo-edit-btn pull-right">发货</a>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +177,8 @@
 
                         <c:if test="${pageInfo.hasPreviousPage}">
                             <li>
-                                <a href="${pageContext.request.contextPath}/admin/order/send?page=${pageInfo.pageNum - 1}" aria-label="Previous">
+                                <a href="${pageContext.request.contextPath}/admin/order/send?page=${pageInfo.pageNum - 1}"
+                                   aria-label="Previous">
                                     <span aria-hidden="true"><i class="fa fa-backward"></i></span>
                                 </a>
                             </li>
@@ -178,22 +186,28 @@
 
                         <c:forEach items="${pageInfo.navigatepageNums}" var="pageNums">
                             <c:if test="${pageNums == pageInfo.pageNum}">
-                                <li class="active"><a href="${pageContext.request.contextPath}/admin/order/send?page=${pageNums}">${pageNums}</a></li>
+                                <li class="active"><a
+                                        href="${pageContext.request.contextPath}/admin/order/send?page=${pageNums}">${pageNums}</a>
+                                </li>
                             </c:if>
                             <c:if test="${pageNums != pageInfo.pageNum}">
-                                <li><a href="${pageContext.request.contextPath}/admin/order/send?page=${pageNums}">${pageNums}</a></li>
+                                <li>
+                                    <a href="${pageContext.request.contextPath}/admin/order/send?page=${pageNums}">${pageNums}</a>
+                                </li>
                             </c:if>
                         </c:forEach>
 
                         <c:if test="${pageInfo.hasNextPage}">
                             <li>
-                                <a href="${pageContext.request.contextPath}/admin/order/send?page=${pageInfo.pageNum + 1}" aria-label="Next">
+                                <a href="${pageContext.request.contextPath}/admin/order/send?page=${pageInfo.pageNum + 1}"
+                                   aria-label="Next">
                                     <span aria-hidden="true"><i class="fa fa-forward"></i></span>
                                 </a>
                             </li>
                         </c:if>
                         <li>
-                            <a href="${pageContext.request.contextPath}/admin/order/send?page=${pageInfo.pages}" aria-label="Next">
+                            <a href="${pageContext.request.contextPath}/admin/order/send?page=${pageInfo.pages}"
+                               aria-label="Next">
                                 <span aria-hidden="true">末页</span>
                             </a>
                         </li>

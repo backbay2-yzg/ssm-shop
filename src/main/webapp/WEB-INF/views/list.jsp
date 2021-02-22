@@ -36,7 +36,8 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/infostyle.css">
@@ -65,7 +66,9 @@
             color: white;
         }
 
-        .no-border{border: 0px solid transparent !important;}
+        .no-border {
+            border: 0px solid transparent !important;
+        }
 
         .bs-example {
             position: relative;
@@ -74,16 +77,17 @@
             border-color: #e5e5e5 #eee #eee;
             border-style: solid;
             border-width: 1px 0;
-            -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
-            box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+            -webkit-box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
         }
 
-        .finish-btn{
-            background-color:#e65b0e !important;
+        .finish-btn {
+            background-color: #e65b0e !important;
         }
 
-        .font-color{
-            color: #00BBD6; !important;
+        .font-color {
+            color: #00BBD6;
+        !important;
         }
 
 
@@ -97,7 +101,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabelPsw">商品评价</h4>
             </div>
             <div class="modal-body">
@@ -120,7 +125,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="saveEvaluate" >保存</button>
+                <button type="button" class="btn btn-primary" id="saveEvaluate">保存</button>
             </div>
         </div>
     </div>
@@ -169,24 +174,30 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/main"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>主页</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/information"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>个人信息</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/list"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>订单管理</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/address"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>地址管理</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/favorite"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>我的收藏</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/main"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>主页</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/information"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>个人信息</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/list"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>订单管理</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/address"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>地址管理</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/favorite"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>我的收藏</a>
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
-            <div class="mdl-grid demo-content" id="parent">
-                <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-                    <h3>未发货</h3><%--未收到货--%>
-                    <c:forEach items="${orderList}" var="order">
-                        <c:if test="${!order.issend}">
-                            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" name="parent">
+        <div class="mdl-grid demo-content" id="parent">
+            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+                <h3>未发货</h3><%--未收到货--%>
+                <c:forEach items="${orderList}" var="order">
+                    <c:if test="${!order.issend}">
+                        <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid"
+                             name="parent">
                             <div class="tab-content col-lg-12">
-                                <table class="table " cellpadding="6" cellspacing="1" ><%--订单信息--%>
+                                <table class="table " cellpadding="6" cellspacing="1"><%--订单信息--%>
                                     <tbody>
-                                    <td class="no-border col-lg-9" >
+                                    <td class="no-border col-lg-9">
                                         订单号：<i name="orderid">${order.orderid}</i>
                                         &nbsp;
                                         &nbsp;
@@ -200,23 +211,23 @@
                                             ${order.address.city}
                                             ${order.address.county}
                                     </td>
-                                    <%--<td class="no-border col-lg-7">
-                                        订单日期:
-                                            ${order.ordertime.year+1900} 年
-                                            ${order.ordertime.month+1} 月
-                                            ${order.ordertime.date} 日
-                                        &nbsp;
-                                        收货地址:
-                                            ${order.address.province}
-                                            ${order.address.city}
-                                            ${order.address.county}
-                                    </td>--%>
-                                    <td  class="no-border col-lg-3">
-                                        原价:${order.oldprice}  现价:${order.newprice}
+                                        <%--<td class="no-border col-lg-7">
+                                            订单日期:
+                                                ${order.ordertime.year+1900} 年
+                                                ${order.ordertime.month+1} 月
+                                                ${order.ordertime.date} 日
+                                            &nbsp;
+                                            收货地址:
+                                                ${order.address.province}
+                                                ${order.address.city}
+                                                ${order.address.county}
+                                        </td>--%>
+                                    <td class="no-border col-lg-3">
+                                        原价:${order.oldprice} 现价:${order.newprice}
                                     </td>
                                     </tbody>
                                 </table>
-                                <table class="table " cellpadding="6" cellspacing="1" ><%--商品描述--%>
+                                <table class="table " cellpadding="6" cellspacing="1"><%--商品描述--%>
                                     <tbody>
                                     <tr>
                                         <td class="col-lg-1">
@@ -237,8 +248,8 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                            <c:forEach items="${order.goodsInfo}" var="good">
-                                    <table class="table table-bordered" cellpadding="6" cellspacing="1" ><%--商品信息--%>
+                                <c:forEach items="${order.goodsInfo}" var="good">
+                                    <table class="table table-bordered" cellpadding="6" cellspacing="1"><%--商品信息--%>
 
                                         <tbody>
                                         <tr>
@@ -260,37 +271,38 @@
                                         </tr>
                                         </tbody>
                                     </table>
-                            </c:forEach>
+                                </c:forEach>
                             </div>
                             <div class="mdl-card__actions mdl-card--border">
                             </div>
                         </div>
-                        </c:if>
-                    </c:forEach>
+                    </c:if>
+                </c:forEach>
 
-                </div>
-                <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-                    <h3>未收货</h3><%--未完成--%>
-                    <c:forEach items="${orderList}" var="order">
-                        <c:if test="${order.issend&&!order.isreceive}">
-                            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" name="parent">
-                                <div class="tab-content col-lg-12">
-                                    <table class="table " cellpadding="6" cellspacing="1" ><%--订单信息--%>
-                                        <tbody>
-                                        <tr>
-                                            <td class="no-border col-lg-9" >
-                                                订单号：<i name="orderid">${order.orderid}</i>
-                                                &nbsp;
-                                                订单日期:
-                                                    ${order.ordertime.year+1900} 年
-                                                    ${order.ordertime.month+1} 月
-                                                    ${order.ordertime.date} 日
-                                                &nbsp;
-                                                收货地址:
-                                                    ${order.address.province}
-                                                    ${order.address.city}
-                                                    ${order.address.county}
-                                            </td>
+            </div>
+            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+                <h3>未收货</h3><%--未完成--%>
+                <c:forEach items="${orderList}" var="order">
+                    <c:if test="${order.issend&&!order.isreceive}">
+                        <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid"
+                             name="parent">
+                            <div class="tab-content col-lg-12">
+                                <table class="table " cellpadding="6" cellspacing="1"><%--订单信息--%>
+                                    <tbody>
+                                    <tr>
+                                        <td class="no-border col-lg-9">
+                                            订单号：<i name="orderid">${order.orderid}</i>
+                                            &nbsp;
+                                            订单日期:
+                                                ${order.ordertime.year+1900} 年
+                                                ${order.ordertime.month+1} 月
+                                                ${order.ordertime.date} 日
+                                            &nbsp;
+                                            收货地址:
+                                                ${order.address.province}
+                                                ${order.address.city}
+                                                ${order.address.county}
+                                        </td>
                                             <%--<td class="no-border col-lg-7">
                                                 订单日期:
                                                     ${order.ordertime.year+1900} 年
@@ -304,133 +316,35 @@
                                                     ${order.address.city}
                                                     ${order.address.county}
                                             </td>--%>
-                                            <td  class="no-border col-lg-3">
-                                                原价:${order.oldprice}  现价:${order.newprice}
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <table class="table " cellpadding="6" cellspacing="1" ><%--商品描述--%>
-                                        <tbody>
-                                        <tr>
-                                            <td class="col-lg-1">
-                                                商品号
-                                            </td>
-                                            <td class="col-lg-2">
-                                                商品名称
-                                            </td>
-                                            <td class="col-lg-1">
-                                                价格
-                                            </td>
-                                            <td class="col-lg-1">
-                                                数量
-                                            </td>
-                                            <td class="col-lg-2">
-                                                商品分类
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <c:forEach items="${order.goodsInfo}" var="good">
-                                    <table class="table table-bordered" cellpadding="6" cellspacing="1" ><%--商品信息--%>
-                                        <tbody>
-                                        <tr>
-                                            <td class="col-lg-1">
-                                                    ${good.goodsid}
-                                            </td>
-                                            <td class="col-lg-2">
-                                                <a href="${pageContext.request.contextPath}/detail?goodsid=${good.goodsid}">${good.goodsname}</a>
-                                            </td>
-                                            <td class="col-lg-1">
-                                                    ${good.price}
-                                            </td>
-                                            <td class="col-lg-1">
-                                                    ${good.num}
-                                            </td>
-                                            <td class="col-lg-2">
-                                                    ${good.category}
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    </c:forEach>
-                                </div>
-                                <div class="mdl-card__actions mdl-card--border">
-                                    <button class="templatemo-blue-button " name="finishList"><h5>完成订单</h5></button>
-                                </div>
-                            </div>
-                        </c:if>
-                    </c:forEach>
-
-                </div>
-                <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-                    <h3>已完成</h3><%--已完成--%>
-                    <c:forEach items="${orderList}" var="order">
-                        <c:if test="${order.iscomplete}">
-                            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" name="parent">
-                                <div class="tab-content col-lg-12">
-                                    <table class="table " cellpadding="6" cellspacing="1" ><%--订单信息--%>
-                                        <tbody>
-                                        <tr>
-                                            <td class="no-border col-lg-9" >
-                                                订单号：<i name="orderid">${order.orderid}</i>
-                                                &nbsp;
-                                                &nbsp;
-                                                订单日期:
-                                                    ${order.ordertime.year+1900} 年
-                                                    ${order.ordertime.month+1} 月
-                                                    ${order.ordertime.date} 日
-                                                &nbsp;
-                                                收货地址:
-                                                    ${order.address.province}
-                                                    ${order.address.city}
-                                                    ${order.address.county}
-                                            </td>
-                                           <%-- <td class="no-border col-lg-7">
-                                                订单日期:
-                                                    ${order.ordertime.year+1900} 年
-                                                    ${order.ordertime.month+1} 月
-                                                    ${order.ordertime.date} 日
-                                                &nbsp;
-                                                &nbsp;
-                                                &nbsp;
-                                                收货地址:
-                                                    ${order.address.province}
-                                                    ${order.address.city}
-                                                    ${order.address.county}
-                                            </td>--%>
-                                            <td  class="no-border col-lg-3">
-                                               原价:${order.oldprice}  现价:${order.newprice}
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <table class="table " cellpadding="6" cellspacing="1" ><%--商品描述--%>
-                                        <tbody>
-                                        <tr>
-                                            <td class="col-lg-1">
-                                                商品号
-                                            </td>
-                                            <td class="col-lg-2">
-                                                商品名称
-                                            </td>
-                                            <td class="col-lg-1">
-                                                价格
-                                            </td>
-                                            <td class="col-lg-1">
-                                                数量
-                                            </td>
-                                            <td class="col-lg-2">
-                                                商品分类
-                                            </td>
-                                            <td class="col-lg-1">
-
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <c:forEach items="${order.goodsInfo}" var="good">
-                                    <table class="table table-bordered" cellpadding="6" cellspacing="1" ><%--商品信息--%>
+                                        <td class="no-border col-lg-3">
+                                            原价:${order.oldprice} 现价:${order.newprice}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table " cellpadding="6" cellspacing="1"><%--商品描述--%>
+                                    <tbody>
+                                    <tr>
+                                        <td class="col-lg-1">
+                                            商品号
+                                        </td>
+                                        <td class="col-lg-2">
+                                            商品名称
+                                        </td>
+                                        <td class="col-lg-1">
+                                            价格
+                                        </td>
+                                        <td class="col-lg-1">
+                                            数量
+                                        </td>
+                                        <td class="col-lg-2">
+                                            商品分类
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <c:forEach items="${order.goodsInfo}" var="good">
+                                    <table class="table table-bordered" cellpadding="6" cellspacing="1"><%--商品信息--%>
                                         <tbody>
                                         <tr>
                                             <td class="col-lg-1">
@@ -448,22 +362,123 @@
                                             <td class="col-lg-2">
                                                     ${good.category}
                                             </td>
-                                            <td class="col-lg-1">
-                                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect font-color" name="evaluate" ><h5>评价</h5></button>
-                                            </td>
                                         </tr>
                                         </tbody>
                                     </table>
-                                    </c:forEach>
-                                </div>
-                                <div class="mdl-card__actions mdl-card--border">
-                                    <button class="templatemo-blue-button finish-btn" name="deleteList"><h5>删除订单</h5></button>
-                                </div>
+                                </c:forEach>
                             </div>
-                        </c:if>
-                    </c:forEach>
-                </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <button class="templatemo-blue-button " name="finishList"><h5>完成订单</h5></button>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+
             </div>
+            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+                <h3>已完成</h3><%--已完成--%>
+                <c:forEach items="${orderList}" var="order">
+                    <c:if test="${order.iscomplete}">
+                        <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid"
+                             name="parent">
+                            <div class="tab-content col-lg-12">
+                                <table class="table " cellpadding="6" cellspacing="1"><%--订单信息--%>
+                                    <tbody>
+                                    <tr>
+                                        <td class="no-border col-lg-9">
+                                            订单号：<i name="orderid">${order.orderid}</i>
+                                            &nbsp;
+                                            &nbsp;
+                                            订单日期:
+                                                ${order.ordertime.year+1900} 年
+                                                ${order.ordertime.month+1} 月
+                                                ${order.ordertime.date} 日
+                                            &nbsp;
+                                            收货地址:
+                                                ${order.address.province}
+                                                ${order.address.city}
+                                                ${order.address.county}
+                                        </td>
+                                            <%-- <td class="no-border col-lg-7">
+                                                 订单日期:
+                                                     ${order.ordertime.year+1900} 年
+                                                     ${order.ordertime.month+1} 月
+                                                     ${order.ordertime.date} 日
+                                                 &nbsp;
+                                                 &nbsp;
+                                                 &nbsp;
+                                                 收货地址:
+                                                     ${order.address.province}
+                                                     ${order.address.city}
+                                                     ${order.address.county}
+                                             </td>--%>
+                                        <td class="no-border col-lg-3">
+                                            原价:${order.oldprice} 现价:${order.newprice}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table " cellpadding="6" cellspacing="1"><%--商品描述--%>
+                                    <tbody>
+                                    <tr>
+                                        <td class="col-lg-1">
+                                            商品号
+                                        </td>
+                                        <td class="col-lg-2">
+                                            商品名称
+                                        </td>
+                                        <td class="col-lg-1">
+                                            价格
+                                        </td>
+                                        <td class="col-lg-1">
+                                            数量
+                                        </td>
+                                        <td class="col-lg-2">
+                                            商品分类
+                                        </td>
+                                        <td class="col-lg-1">
+
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <c:forEach items="${order.goodsInfo}" var="good">
+                                    <table class="table table-bordered" cellpadding="6" cellspacing="1"><%--商品信息--%>
+                                        <tbody>
+                                        <tr>
+                                            <td class="col-lg-1">
+                                                    ${good.goodsid}
+                                            </td>
+                                            <td class="col-lg-2">
+                                                <a href="${pageContext.request.contextPath}/detail?goodsid=${good.goodsid}">${good.goodsname}</a>
+                                            </td>
+                                            <td class="col-lg-1">
+                                                    ${good.price}
+                                            </td>
+                                            <td class="col-lg-1">
+                                                    ${good.num}
+                                            </td>
+                                            <td class="col-lg-2">
+                                                    ${good.category}
+                                            </td>
+                                            <td class="col-lg-1">
+                                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect font-color"
+                                                        name="evaluate"><h5>评价</h5></button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </c:forEach>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <button class="templatemo-blue-button finish-btn" name="deleteList"><h5>删除订单</h5>
+                                </button>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+            </div>
+        </div>
     </main>
 </div>
 

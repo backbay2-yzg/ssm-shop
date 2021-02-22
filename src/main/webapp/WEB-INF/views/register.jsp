@@ -5,11 +5,11 @@
   Time: 20:50
   To change this template use File | Settings | File Templates.
 --%>
-<%@page import="java.security.interfaces.RSAKey"%>
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="java.security.interfaces.RSAKey" %>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%request.setCharacterEncoding("utf-8");%>
-<%@ page import="java.sql.*"%>
-<%@ page import="java.text.*"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.text.*" %>
 
 <!DOCTYPE html>
 <html>
@@ -31,12 +31,13 @@
 <body>
 <div id="main" class="container">
     <div id="header">
-        <%@ include file="header.jsp"%>
+        <%@ include file="header.jsp" %>
     </div>
     <div class="login">
         <div class="row">
             <div class="col-md-6">
-                <img src="${pageContext.request.contextPath}/image/register.png" width="450" height="600" alt="" style="margin-left: 40px;">
+                <img src="${pageContext.request.contextPath}/image/register.png" width="450" height="600" alt=""
+                     style="margin-left: 40px;">
             </div>
             <div class="col-md-5 form-register">
                 <div>

@@ -65,7 +65,7 @@ public class OrderController {
         Float totalPrice = new Float(0);
         Integer oldTotalPrice = 0;
 
-        for (ShopCart cart:shopCart) {
+        for (ShopCart cart : shopCart) {
             Goods goods = goodsService.selectById(cart.getGoodsid());
 
             List<ImagePath> imagePathList = goodsService.findImagePath(goods.getGoodsid());
@@ -76,16 +76,16 @@ public class OrderController {
             Activity activity = activityService.selectByKey(goods.getActivityid());
             goods.setActivity(activity);
 
-            if(activity.getDiscount() != 1) {
-                goods.setNewPrice(goods.getPrice()*goods.getNum()* activity.getDiscount());
-            } else if(activity.getFullnum() != null) {
+            if (activity.getDiscount() != 1) {
+                goods.setNewPrice(goods.getPrice() * goods.getNum() * activity.getDiscount());
+            } else if (activity.getFullnum() != null) {
                 if (goods.getNum() >= activity.getFullnum()) {
-                    goods.setNewPrice((float) (goods.getPrice()*(goods.getNum()-activity.getReducenum())));
+                    goods.setNewPrice((float) (goods.getPrice() * (goods.getNum() - activity.getReducenum())));
                 } else {
-                    goods.setNewPrice((float) (goods.getPrice()*goods.getNum()));
+                    goods.setNewPrice((float) (goods.getPrice() * goods.getNum()));
                 }
             } else {
-                goods.setNewPrice((float) (goods.getPrice()*goods.getNum()));
+                goods.setNewPrice((float) (goods.getPrice() * goods.getNum()));
             }
             totalPrice = totalPrice + goods.getNewPrice();
             oldTotalPrice = oldTotalPrice + goods.getNum() * goods.getPrice();
@@ -101,7 +101,7 @@ public class OrderController {
 
     @RequestMapping("/orderFinish")
     @ResponseBody
-    public Msg orderFinish(Float oldPrice, Float newPrice, Boolean isPay, Integer addressid,HttpSession session) {
+    public Msg orderFinish(Float oldPrice, Float newPrice, Boolean isPay, Integer addressid, HttpSession session) {
         User user = (User) session.getAttribute("user");
 
         //获取订单信息
@@ -111,11 +111,11 @@ public class OrderController {
 
         //删除购物车
         for (ShopCart cart : shopCart) {
-            shopCartService.deleteByKey(new ShopCartKey(cart.getUserid(),cart.getGoodsid()));
+            shopCartService.deleteByKey(new ShopCartKey(cart.getUserid(), cart.getGoodsid()));
         }
 
         //把订单信息写入数据库
-        Order order = new Order(null, user.getUserid(), new Date(), oldPrice, newPrice, isPay, false, false, false, addressid,null,null);
+        Order order = new Order(null, user.getUserid(), new Date(), oldPrice, newPrice, isPay, false, false, false, addressid, null, null);
         orderService.insertOrder(order);
         //插入的订单号
         Integer orderId = order.getOrderid();

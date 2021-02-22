@@ -18,7 +18,7 @@ public interface AddressService {
 
     public void insert(Address address);
 
-    public void  insertSelective(Address address);
+    public void insertSelective(Address address);
 
     public Address selectByPrimaryKey(Integer addressid);
 }

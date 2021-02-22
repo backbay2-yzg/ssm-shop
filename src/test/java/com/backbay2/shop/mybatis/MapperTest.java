@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:applicationContext.xml"})
+@ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class MapperTest {
 
     /*@Autowired(required = false)
@@ -40,7 +40,7 @@ public class MapperTest {
         departmentMapper.insertSelective(new Department(null, "业务部"));
         departmentMapper.insertSelective(new Department(null, "销售部"));*/
 
-        System.out.println(adminMapper.selectByName(new Admin(null,"root","root")));
+        System.out.println(adminMapper.selectByName(new Admin(null, "root", "root")));
 
     }
 

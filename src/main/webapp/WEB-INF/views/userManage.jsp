@@ -19,7 +19,8 @@
     Visual Admin Template
     http://www.templatemo.com/preview/templatemo_455_visual_admin
     -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet'
+          type='text/css'>
     <link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/templatemo-style.css" rel="stylesheet">
@@ -62,8 +63,10 @@
                         <tr>
                             <td><a href="" class="white-text templatemo-sort-by">id<span class="caret"></span></a></td>
                             <td><a href="" class="white-text templatemo-sort-by">用户名<span class="caret"></span></a></td>
-                            <td><a href="" class="white-text templatemo-sort-by">Email<span class="caret"></span></a></td>
-                            <td><a href="" class="white-text templatemo-sort-by">联系电话<span class="caret"></span></a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">Email<span class="caret"></span></a>
+                            </td>
+                            <td><a href="" class="white-text templatemo-sort-by">联系电话<span class="caret"></span></a>
+                            </td>
                             <td>删除</td>
                         </tr>
                         </thead>
@@ -84,13 +87,14 @@
 <div id="path" style="display: none;">${pageContext.request.contextPath}</div>
 <!-- JS -->
 <script src="${pageContext.request.contextPath}/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
-<script src="${pageContext.request.contextPath}/js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
+<script src="${pageContext.request.contextPath}/js/jquery-migrate-1.2.1.min.js"></script>
+<!--  jQuery Migrate Plugin -->
 <script src="https://www.google.com/jsapi"></script> <!-- Google Chart -->
 <script>
     /* Google Chart
      -------------------------------------------------------------------*/
     // Load the Visualization API and the piechart package.
-    google.load('visualization', '1.0', {'packages':['corechart']});
+    google.load('visualization', '1.0', {'packages': ['corechart']});
 
     // Set a callback to run when the Google Visualization API is loaded.
     google.setOnLoadCallback(drawChart);
@@ -113,7 +117,7 @@
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night'};
+        var options = {'title': 'How Much Pizza I Ate Last Night'};
 
         // Instantiate and draw our chart, passing in some options.
         var pieChart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
@@ -123,27 +127,26 @@
         barChart.draw(data, options);
     }
 
-    $(document).ready(function(){
-        if($.browser.mozilla) {
+    $(document).ready(function () {
+        if ($.browser.mozilla) {
             //refresh page on browser resize
             // http://www.sitepoint.com/jquery-refresh-page-browser-resize/
-            $(window).bind('resize', function(e)
-            {
+            $(window).bind('resize', function (e) {
                 if (window.RT) clearTimeout(window.RT);
-                window.RT = setTimeout(function()
-                {
+                window.RT = setTimeout(function () {
                     this.location.reload(false); /* false to get page from cache */
                 }, 200);
             });
         } else {
-            $(window).resize(function(){
+            $(window).resize(function () {
                 drawChart();
             });
         }
     });
 
 </script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/templatemo-script.js"></script>
+<!-- Templatemo Script -->
 <script src="${pageContext.request.contextPath}/js/userManage.js"></script>
 </body>
 </html>

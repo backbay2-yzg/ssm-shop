@@ -21,13 +21,13 @@ $(document).ready(function () {
     });
 });*/
 
-$(document).on("click",".description",function () {
+$(document).on("click", ".description", function () {
     $(this).popover();
 });
 
-$(document).on("click",".templatemo-edit-btn",function () {
+$(document).on("click", ".templatemo-edit-btn", function () {
     $("#update-goods").modal({
-        backdrop:'static'
+        backdrop: 'static'
     });
 
     //获取当前点击商品的数据
@@ -47,7 +47,7 @@ $(document).on("click",".templatemo-edit-btn",function () {
 });
 
 //修改商品信息
-$(document).on("click","#saveUpdate",function () {
+$(document).on("click", "#saveUpdate", function () {
     var ugoodsid = $("#goodsid").text();
     var ugoodsname = $("#goodsname").val();
     var uprice = $("#price").val();
@@ -63,23 +63,23 @@ $(document).on("click","#saveUpdate",function () {
     $("#update-goods").ajaxForm(option);*/
 
     $.ajax({
-        url:"/shop/admin/goods/update/",
-        type:"POST",
-        data:{
-            goodsid:ugoodsid,
-            goodsname:ugoodsname,
-            price:uprice,
-            num:unum,
-            description:udescription,
-            category:ucategory,
-            detailcate:udetailcate,
+        url: "/shop/admin/goods/update/",
+        type: "POST",
+        data: {
+            goodsid: ugoodsid,
+            goodsname: ugoodsname,
+            price: uprice,
+            num: unum,
+            description: udescription,
+            category: ucategory,
+            detailcate: udetailcate,
         },
-        success:function(result){
+        success: function (result) {
             $("#update-goods").modal('hide');
-            swal(result.msg,'','success');
-            to_page('/shop',currentPage);
+            swal(result.msg, '', 'success');
+            to_page('/shop', currentPage);
         },
-        error:function(){
+        error: function () {
             alert("错误！！");
         }
     });
@@ -102,14 +102,14 @@ $(document).on("click","#saveUpdate",function () {
     });*/
 });
 
-$(document).on("click",".templatemo-delete-btn",function () {
+$(document).on("click", ".templatemo-delete-btn", function () {
     var goodsname = $(this).parents("tr").find("td:eq(1)").text();
     var goodsid = $(this).parents("tr").find("td:eq(0)").text();
     swal({
             title: "确定删除" + goodsname + "吗？",
             type: "warning",
             showCancelButton: true,
-            cancelButtonText:"取消",
+            cancelButtonText: "取消",
             confirmButtonColor: "#DD6B55",
             confirmButtonText: "确定删除！",
             closeOnConfirm: false,
@@ -119,12 +119,12 @@ $(document).on("click",".templatemo-delete-btn",function () {
             $.ajax({
                 url: "/shop/admin/goods/delete/" + goodsid,
                 type: "DELETE",
-                success:function (result) {
-                    swal(result.msg, "","success");
-                    to_page('/shop',currentPage);
+                success: function (result) {
+                    swal(result.msg, "", "success");
+                    to_page('/shop', currentPage);
                 },
-                error:function () {
-                    to_page('/shop',currentPage);
+                error: function () {
+                    to_page('/shop', currentPage);
                 }
             });
         });
@@ -136,13 +136,13 @@ $(document).on("click",".templatemo-delete-btn",function () {
 });*/
 
 function showActInfo(activityId) {
-    $('#activityname').text(activity[activityId-1].activityname);
-    $('#activitydes').text(activity[activityId-1].activitydes);
-    $('#discount').text(activity[activityId-1].discount);
-    $('#fullprice').text(activity[activityId-1].fullprice);
-    $('#reduceprice').text(activity[activityId-1].reduceprice);
-    $('#fullnum').text(activity[activityId-1].fullnum);
-    $('#reducenum').text(activity[activityId-1].reducenum);
+    $('#activityname').text(activity[activityId - 1].activityname);
+    $('#activitydes').text(activity[activityId - 1].activitydes);
+    $('#discount').text(activity[activityId - 1].discount);
+    $('#fullprice').text(activity[activityId - 1].fullprice);
+    $('#reduceprice').text(activity[activityId - 1].reduceprice);
+    $('#fullnum').text(activity[activityId - 1].fullnum);
+    $('#reducenum').text(activity[activityId - 1].reducenum);
 }
 
 $("#activity-id").change(function () {
@@ -154,11 +154,11 @@ function getActivity() {
         url: "/shop/admin/activity/showjson",
         type: "post",
         success: function (result) {
-            if(result.code==100) {
+            if (result.code == 100) {
                 $("#activity-id").empty();
                 activity = result.info.activity;
-                $.each(activity, function (index,item) {
-                    $("#activity-id").append($("<option></option>").attr("value",item.activityid).append(item.activityid));
+                $.each(activity, function (index, item) {
+                    $("#activity-id").append($("<option></option>").attr("value", item.activityid).append(item.activityid));
                 });
                 showActInfo(1);
             } else {
@@ -169,23 +169,23 @@ function getActivity() {
 }
 
 //保存活动信息
-$(document).on("click","#saveActivity",function () {
+$(document).on("click", "#saveActivity", function () {
     var goodsid = $("#activity-goodsid").text();
     var activityid = $("#activity-id").val();
 
     $.ajax({
-        url:"/shop/admin/activity/update/",
-        type:"POST",
-        data:{
-            goodsid:goodsid,
-            activityid:activityid
+        url: "/shop/admin/activity/update/",
+        type: "POST",
+        data: {
+            goodsid: goodsid,
+            activityid: activityid
         },
-        success:function(result){
+        success: function (result) {
             $("#activity-goods").modal('hide');
-            swal(result.msg,'','success');
+            swal(result.msg, '', 'success');
             to_page('/shop', currentPage);
         },
-        error:function(){
+        error: function () {
             alert("错误！！");
         }
     });
@@ -212,10 +212,10 @@ function to_page(path, page) {
     });
 }
 
-function build_goods_table(path,result) {
+function build_goods_table(path, result) {
     $("#goodsinfo tbody").empty();
     var goods = result.info.pageInfo.list;
-    $.each(goods, function (index,item) {
+    $.each(goods, function (index, item) {
         var goodsid = $("<td></td>").append(item.goodsid);
         var goodsname = $("<td></td>").append(item.goodsname);
         var price = $("<td></td>").append(item.price);
@@ -226,9 +226,9 @@ function build_goods_table(path,result) {
         // var detailA = $('<a tabindex="0" class="btn btn-sm description" role="button" placement="top" data-toggle="popover" data-trigger="focus" title="描述" ></a>').append("描述");
         var detailBtn = $('<button type="button" class="description" data-container="body" data-toggle="popover" data-placement="top"></button>').append("描述");
 
-        detailBtn = detailBtn.attr("data-content",item.description);
+        detailBtn = detailBtn.attr("data-content", item.description);
 
-        var detailA = $("<a></a>").addClass("templatemo-link").attr("href","/shop/detail?goodsid="+item.goodsid).append("详情");
+        var detailA = $("<a></a>").addClass("templatemo-link").attr("href", "/shop/detail?goodsid=" + item.goodsid).append("详情");
 
         var editBtn = $("<button></button>").addClass("templatemo-edit-btn").append("编辑");
         var deleteBtn = $("<button></button>").addClass("templatemo-delete-btn").append("删除");
@@ -236,10 +236,10 @@ function build_goods_table(path,result) {
         var desTd = $("<td hidden></td>").append(detailBtn);
 
         //活动按钮
-        var actBtn = $("<button></button>").addClass("templatemo-activity-btn").attr("data-actGoodsid",item.goodsid).append("添加");
+        var actBtn = $("<button></button>").addClass("templatemo-activity-btn").attr("data-actGoodsid", item.goodsid).append("添加");
         actBtn.click(function () {
             $("#activity-goods").modal({
-                backdrop:'static'
+                backdrop: 'static'
             });
             $("#activity-goodsid").text($(this).attr("data-actGoodsid"));
             getActivity();
@@ -255,12 +255,12 @@ function build_goods_table(path,result) {
     })
 }
 
-function build_page_info(path,result) {
+function build_page_info(path, result) {
     $("#page-info-area").empty();
-    $("#page-info-area").append("当前第"+ result.info.pageInfo.pageNum +"页，总共"+ result.info.pageInfo.pages +"页，总共"+ result.info.pageInfo.total +"记录")
+    $("#page-info-area").append("当前第" + result.info.pageInfo.pageNum + "页，总共" + result.info.pageInfo.pages + "页，总共" + result.info.pageInfo.total + "记录")
 }
 
-function build_page_nav(path,result) {
+function build_page_nav(path, result) {
     $("#page-div-nav ul").empty();
     var pageUl = $("<ul></ul>").addClass("pagination")
 
@@ -271,17 +271,17 @@ function build_page_nav(path,result) {
     var prePage = $("<li></li>").append($("<a aria-label=\"Next\"></a>")
         .append($("<span aria-hidden=\"true\"><i class=\"fa fa-backward\"></i></span>")));
 
-    if(!result.info.pageInfo.hasPreviousPage) {
+    if (!result.info.pageInfo.hasPreviousPage) {
         prePage.addClass("li-none");
     } else {
         prePage.click(function () {
-            to_page('/shop',result.info.pageInfo.prePage);
+            to_page('/shop', result.info.pageInfo.prePage);
         });
     }
 
     //跳转
     firstPage.click(function () {
-        to_page('/shop',1);
+        to_page('/shop', 1);
     });
 
     var nextPage = $("<li></li>").append($("<a aria-label=\"Next\"></a>")
@@ -291,28 +291,28 @@ function build_page_nav(path,result) {
         .append($("<span aria-hidden=\"true\"></span>")
             .append("末页")));
 
-    if(!result.info.pageInfo.hasNextPage) {
+    if (!result.info.pageInfo.hasNextPage) {
         nextPage.addClass("li-none");
     } else {
         nextPage.click(function () {
-            to_page('/shop',result.info.pageInfo.nextPage);
+            to_page('/shop', result.info.pageInfo.nextPage);
         });
     }
 
     lastPage.click(function () {
-        to_page('/shop',result.info.pageInfo.lastPage);
+        to_page('/shop', result.info.pageInfo.lastPage);
     });
 
     pageUl.append(firstPage).append(prePage);
 
-    $.each(result.info.pageInfo.navigatepageNums,function (index,item) {
+    $.each(result.info.pageInfo.navigatepageNums, function (index, item) {
         var numLi = $("<li></li>").append($("<a></a>")
             .append($("<span aria-hidden=\"true\"></span>").append(item)));
-        if(result.info.pageInfo.pageNum === item) {
+        if (result.info.pageInfo.pageNum === item) {
             numLi.addClass("active");
         }
         numLi.click(function () {
-            to_page('/shop',item);
+            to_page('/shop', item);
         });
         pageUl.append(numLi);
     });

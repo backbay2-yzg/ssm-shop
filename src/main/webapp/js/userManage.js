@@ -12,14 +12,14 @@ $(document).ready(function () {
 
 });
 
-$(document).on("click",".templatemo-delete-btn",function () {
+$(document).on("click", ".templatemo-delete-btn", function () {
     var goodsname = $(this).parents("tr").find("td:eq(1)").text();
     var goodsid = $(this).parents("tr").find("td:eq(0)").text();
     swal({
             title: "确定删除" + goodsname + "吗？",
             type: "warning",
             showCancelButton: true,
-            cancelButtonText:"取消",
+            cancelButtonText: "取消",
             confirmButtonColor: "#DD6B55",
             confirmButtonText: "确定删除！",
             closeOnConfirm: false,
@@ -29,11 +29,11 @@ $(document).on("click",".templatemo-delete-btn",function () {
             $.ajax({
                 url: "/shop/admin/user/delete/" + goodsid,
                 type: "DELETE",
-                success:function (result) {
-                    swal(result.msg, "","success");
-                    to_page('/shop',currentPage);
+                success: function (result) {
+                    swal(result.msg, "", "success");
+                    to_page('/shop', currentPage);
                 },
-                error:function () {
+                error: function () {
                     /*to_page('/shop',currentPage);*/
                 }
             });
@@ -61,10 +61,10 @@ function to_page(path, page) {
     });
 }
 
-function build_user_table(path,result) {
+function build_user_table(path, result) {
     $("#goodsinfo tbody").empty();
     var goods = result.info.pageInfo.list;
-    $.each(goods, function (index,item) {
+    $.each(goods, function (index, item) {
         var userid = $("<td></td>").append(item.userid);
         var username = $("<td></td>").append(item.username);
         var email = $("<td></td>").append(item.email);
@@ -83,12 +83,12 @@ function build_user_table(path,result) {
     })
 }
 
-function build_page_info(path,result) {
+function build_page_info(path, result) {
     $("#page-info-area").empty();
-    $("#page-info-area").append("当前第"+ result.info.pageInfo.pageNum +"页，总共"+ result.info.pageInfo.pages +"页，总共"+ result.info.pageInfo.total +"记录")
+    $("#page-info-area").append("当前第" + result.info.pageInfo.pageNum + "页，总共" + result.info.pageInfo.pages + "页，总共" + result.info.pageInfo.total + "记录")
 }
 
-function build_page_nav(path,result) {
+function build_page_nav(path, result) {
     $("#page-div-nav ul").empty();
     var pageUl = $("<ul></ul>").addClass("pagination")
 
@@ -99,17 +99,17 @@ function build_page_nav(path,result) {
     var prePage = $("<li></li>").append($("<a aria-label=\"Next\"></a>")
         .append($("<span aria-hidden=\"true\"><i class=\"fa fa-backward\"></i></span>")));
 
-    if(!result.info.pageInfo.hasPreviousPage) {
+    if (!result.info.pageInfo.hasPreviousPage) {
         prePage.addClass("li-none");
     } else {
         prePage.click(function () {
-            to_page('/shop',result.info.pageInfo.prePage);
+            to_page('/shop', result.info.pageInfo.prePage);
         });
     }
 
     //跳转
     firstPage.click(function () {
-        to_page('/shop',1);
+        to_page('/shop', 1);
     });
 
     var nextPage = $("<li></li>").append($("<a aria-label=\"Next\"></a>")
@@ -119,28 +119,28 @@ function build_page_nav(path,result) {
         .append($("<span aria-hidden=\"true\"></span>")
             .append("末页")));
 
-    if(!result.info.pageInfo.hasNextPage) {
+    if (!result.info.pageInfo.hasNextPage) {
         nextPage.addClass("li-none");
     } else {
         nextPage.click(function () {
-            to_page('/shop',result.info.pageInfo.nextPage);
+            to_page('/shop', result.info.pageInfo.nextPage);
         });
     }
 
     lastPage.click(function () {
-        to_page('/shop',result.info.pageInfo.lastPage);
+        to_page('/shop', result.info.pageInfo.lastPage);
     });
 
     pageUl.append(firstPage).append(prePage);
 
-    $.each(result.info.pageInfo.navigatepageNums,function (index,item) {
+    $.each(result.info.pageInfo.navigatepageNums, function (index, item) {
         var numLi = $("<li></li>").append($("<a></a>")
             .append($("<span aria-hidden=\"true\"></span>").append(item)));
-        if(result.info.pageInfo.pageNum === item) {
+        if (result.info.pageInfo.pageNum === item) {
             numLi.addClass("active");
         }
         numLi.click(function () {
-            to_page('/shop',item);
+            to_page('/shop', item);
         });
         pageUl.append(numLi);
     });

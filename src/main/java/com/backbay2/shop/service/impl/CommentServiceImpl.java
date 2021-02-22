@@ -20,7 +20,7 @@ public class CommentServiceImpl implements CommentService {
     private CommentMapper commentMapper;
 
     @Override
-    public void insertSelective(Comment comment){
+    public void insertSelective(Comment comment) {
         commentMapper.insertSelective(comment);
     }
 

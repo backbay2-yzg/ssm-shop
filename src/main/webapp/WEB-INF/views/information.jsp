@@ -52,7 +52,8 @@ limitations under the License
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/infostyle.css">
@@ -72,6 +73,7 @@ limitations under the License
             margin-bottom: 40px;
             z-index: 900;
         }
+
         .templatemo-blue-button {
             background-color: #39ADB4;
             border: none;
@@ -87,7 +89,8 @@ limitations under the License
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">修改个人信息</h4>
             </div>
             <div class="modal-body">
@@ -95,7 +98,7 @@ limitations under the License
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">昵称</label>
                         <div class="col-sm-9">
-                            <div  name="name" id="name"></div>
+                            <div name="name" id="name"></div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -114,7 +117,7 @@ limitations under the License
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="saveInfo" >保存</button>
+                <button type="button" class="btn btn-primary" id="saveInfo">保存</button>
             </div>
         </div>
     </div>
@@ -126,7 +129,8 @@ limitations under the License
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabelPsw">修改密码</h4>
             </div>
             <div class="modal-body">
@@ -160,7 +164,7 @@ limitations under the License
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="savePsw" >保存</button>
+                <button type="button" class="btn btn-primary" id="savePsw">保存</button>
             </div>
         </div>
     </div>
@@ -172,30 +176,30 @@ limitations under the License
             <span class="mdl-layout-title">个人信息</span>
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-               <%-- <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-                    <i class="material-icons">search</i>
-                </label>
-                <div class="mdl-textfield__expandable-holder">
-                    <input class="mdl-textfield__input" type="text" id="search">
-                    <label class="mdl-textfield__label" for="search">Enter your query...</label>
-                </div>--%>
+                <%-- <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                     <i class="material-icons">search</i>
+                 </label>
+                 <div class="mdl-textfield__expandable-holder">
+                     <input class="mdl-textfield__input" type="text" id="search">
+                     <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                 </div>--%>
             </div>
-           <%-- <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
-                <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-                <li class="mdl-menu__item">About</li>
-                <li class="mdl-menu__item">Contact</li>
-                <li class="mdl-menu__item">Legal information</li>
-            </ul>--%>
+            <%-- <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+                 <i class="material-icons">more_vert</i>
+             </button>
+             <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                 <li class="mdl-menu__item">About</li>
+                 <li class="mdl-menu__item">Contact</li>
+                 <li class="mdl-menu__item">Legal information</li>
+             </ul>--%>
         </div>
     </header>
     <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-           <%-- <img src="images/user.jpg" class="demo-avatar">--%>
+            <%-- <img src="images/user.jpg" class="demo-avatar">--%>
             <div class="demo-avatar-dropdown">
                 <h1>淘一淘</h1>
-               <%-- <span>hello@example.com</span>--%>
+                <%-- <span>hello@example.com</span>--%>
                 <div class="mdl-layout-spacer">
                 </div>
                 <%--<button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -210,52 +214,58 @@ limitations under the License
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/main"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>主页</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/information"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>个人信息</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/list"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>订单管理</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/address"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>地址管理</a>
-            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/favorite"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>我的收藏</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/main"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>主页</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/information"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>个人信息</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/list"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>订单管理</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/address"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>地址管理</a>
+            <a class="mdl-navigation__link" href="${pageContext.request.contextPath}/info/favorite"><i
+                    class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>我的收藏</a>
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
             <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
                 <div class="tab-content">
-                        <table class="table" cellpadding="6" cellspacing="1">
-                            <thead>
-                            <th style="border: 0px solid transparent">
-                                <%--<h1>个人信息</h1>--%>
-                            </th>
-                            </thead>
-                            <tbody >
-                            <tr >
-                                <th style="border: 0px solid transparent" class="tl">用户号</th>
-                                <td style="border: 0px solid transparent" class="tr" id="userIdVal">${user.getUserid()}</td>
-                            </tr>
-                            <tr>
-                                <th style="border: 0px solid transparent" class="tl">用户名</th>
-                                <td style="border: 0px solid transparent" class="tr" id="nameVal">${user.getUsername()}</td>
-                            </tr>
-                            <tr>
-                                <th style="border: 0px solid transparent" class="tl">注册时间</th>
-                                <td style="border: 0px solid transparent" class="tr" id="regTimeVal">
-                                    ${user.regtime.year+1900} 年
-                                    ${user.regtime.month+1} 月
-                                    ${user.regtime.date} 日
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="border: 0px solid transparent" class="tl">邮箱</th>
-                                <td style="border: 0px solid transparent" class="tr" id="emailVal">${user.getEmail()}</td>
-                            </tr>
-                            <tr>
-                                <th style="border: 0px solid transparent" class="tl">手机号</th>
-                                <td style="border: 0px solid transparent" class="tr" id="telephoneVal">${user.getTelephone()}</td>
-                            </tr>
-                            <i Psw="${user.getPassword()}" id="Psw"></i>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table class="table" cellpadding="6" cellspacing="1">
+                        <thead>
+                        <th style="border: 0px solid transparent">
+                            <%--<h1>个人信息</h1>--%>
+                        </th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th style="border: 0px solid transparent" class="tl">用户号</th>
+                            <td style="border: 0px solid transparent" class="tr" id="userIdVal">${user.getUserid()}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 0px solid transparent" class="tl">用户名</th>
+                            <td style="border: 0px solid transparent" class="tr" id="nameVal">${user.getUsername()}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 0px solid transparent" class="tl">注册时间</th>
+                            <td style="border: 0px solid transparent" class="tr" id="regTimeVal">
+                                ${user.regtime.year+1900} 年
+                                ${user.regtime.month+1} 月
+                                ${user.regtime.date} 日
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="border: 0px solid transparent" class="tl">邮箱</th>
+                            <td style="border: 0px solid transparent" class="tr" id="emailVal">${user.getEmail()}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 0px solid transparent" class="tl">手机号</th>
+                            <td style="border: 0px solid transparent" class="tr"
+                                id="telephoneVal">${user.getTelephone()}</td>
+                        </tr>
+                        <i Psw="${user.getPassword()}" id="Psw"></i>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <button class="templatemo-blue-button" id="changeInfo"><h5>修改信息</h5></button>
                     <button class="templatemo-blue-button" id="changePsw"><h5>修改密码</h5></button>

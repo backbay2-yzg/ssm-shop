@@ -93,45 +93,45 @@
                 });
             });*/
 
-            $('.fav-button').click(function(){
+            $('.fav-button').click(function () {
                 //$(this).removeClass("glyphicon-heart-empty");
                 var goodsId = $(this).attr('data-id');
                 var isChangeBtn = true;
-                if(!$(this).children("i").hasClass('fa-heart')) {
+                if (!$(this).children("i").hasClass('fa-heart')) {
                     //收藏
                     $.ajax({
-                        url:"/shop/collect",
-                        type:"POST",
-                        data:{
-                            goodsid:goodsId
+                        url: "/shop/collect",
+                        type: "POST",
+                        data: {
+                            goodsid: goodsId
                         },
-                        success:function (result) {
+                        success: function (result) {
                             //收藏成功
-                            if(result.code === 200){
+                            if (result.code === 200) {
                                 location.href = "/shop/login";
                                 isChangeBtn = false;
                             }
                         },
-                        error:function () {
+                        error: function () {
                             alert("收藏失败");
                         }
                     })
                 } else {
                     //取消收藏
                     $.ajax({
-                        url:"/shop/deleteCollect",
-                        type:"POST",
-                        data:{
-                            goodsid:goodsId
+                        url: "/shop/deleteCollect",
+                        type: "POST",
+                        data: {
+                            goodsid: goodsId
                         },
-                        success:function (result) {
+                        success: function (result) {
                             //取消收藏成功
-                            if(result.code === 200){
+                            if (result.code === 200) {
                                 location.href = "/shop/login";
                                 isChangeBtn = false;
                             }
                         },
-                        error:function () {
+                        error: function () {
                             alert("取消收藏失败");
                         }
                     })
@@ -142,10 +142,10 @@
                  });
                  // alert("商品已加入购物车！");*/
 
-                if(isChangeBtn) {
+                if (isChangeBtn) {
                     $(this).children("i").toggleClass("fa-heart fa-heart-o");
                     var likeContent = $(this).children("span").text();
-                    if(likeContent == '收藏'){
+                    if (likeContent == '收藏') {
                         $(this).children("span").text('取消收藏');
                     } else {
                         $(this).children("span").text('收藏');
@@ -155,14 +155,15 @@
         });
     </script>
     <style>
-        .head{
+        .head {
             width: 45px !important;
-            background: rgba(0,0,0,.0001) none repeat scroll 0 0 !important;
-            border: 1px solid rgba(0,0,0,.075) !important;
+            background: rgba(0, 0, 0, .0001) none repeat scroll 0 0 !important;
+            border: 1px solid rgba(0, 0, 0, .075) !important;
         }
-        .span-block{
+
+        .span-block {
             display: block !important;
-            padding:5px;
+            padding: 5px;
         }
     </style>
 
@@ -275,18 +276,21 @@
 
                     <div class="rel-div">
                         <div class="add_defi new_meta">
-                            <a id="chatto" href="${pageContext.request.contextPath}/chat?sendto=5" data-original-title="Add to Wishlist" data-toggle="tooltip" class=" big-font">
+                            <a id="chatto" href="${pageContext.request.contextPath}/chat?sendto=5"
+                               data-original-title="Add to Wishlist" data-toggle="tooltip" class=" big-font">
                                 <i class="fa fa-commenting"></i>
                                 联系客服
                             </a>
                         </div>
-                        <form class="cart-btn-area new_meta" action="${pageContext.request.contextPath}/addCart" method="post">
+                        <form class="cart-btn-area new_meta" action="${pageContext.request.contextPath}/addCart"
+                              method="post">
                             <input type="hidden" value="${goodsInfo['goods'].goodsid}" name="goodsid"/>
                             <input type="number" value="1" name="goodsnum">
                             <button class="add-tocart cart_zpf" type="submit">加入购物车</button>
                         </form>
                         <div class="add_defi new_meta">
-                            <a data-original-title="Add to Wishlist" data-toggle="tooltip" class="fav-button big-font" data-id="${goodsInfo['goods'].goodsid}">
+                            <a data-original-title="Add to Wishlist" data-toggle="tooltip" class="fav-button big-font"
+                               data-id="${goodsInfo['goods'].goodsid}">
                                 <c:if test="${goodsInfo['goods'].fav}">
                                     <i class="fa fa-heart"></i>
                                     取消收藏
@@ -350,18 +354,22 @@
                                                         <li id="li-comment-22" class="comment even thread-even depth-1"
                                                             itemscope="">
                                                             <div id="comment-22" class="comment_container">
-                                                                <img class="head avatar avatar-60 photo "width="60" height="60"
-                                                                     src="${pageContext.request.contextPath}/image/head.jpg" alt="">
+                                                                <img class="head avatar avatar-60 photo " width="60"
+                                                                     height="60"
+                                                                     src="${pageContext.request.contextPath}/image/head.jpg"
+                                                                     alt="">
                                                                 <div class="comment-text">
-                                                                    <div class="star-rating" title="Rated ${comment.point} out of 5"
+                                                                    <div class="star-rating"
+                                                                         title="Rated ${comment.point} out of 5"
                                                                          itemscope="">
                                                                         <div class="price_rating price_rating_2">
-                                                                          <c:forEach  begin="1" end="${comment.point}">
-                                                                              <a href="#">
-                                                                                  <i class="fa fa-star"></i>
-                                                                              </a>
-                                                                          </c:forEach>
-                                                                            <c:forEach begin="${comment.point+1}" end="5">
+                                                                            <c:forEach begin="1" end="${comment.point}">
+                                                                                <a href="#">
+                                                                                    <i class="fa fa-star"></i>
+                                                                                </a>
+                                                                            </c:forEach>
+                                                                            <c:forEach begin="${comment.point+1}"
+                                                                                       end="5">
                                                                                 <a class="not-rated" href="#">
                                                                                     <i class="fa fa-star-o"
                                                                                        aria-hidden="true"></i>
@@ -377,12 +385,14 @@
                                                                         <strong>${comment.username}</strong>
                                                                         –
                                                                         <time datetime="${comment.commenttime}">
-                                                                            ${comment.commenttime.year+1900}年
-                                                                            ${comment.commenttime.month+1}月
-                                                                            ${comment.commenttime.date}日
+                                                                                ${comment.commenttime.year+1900}年
+                                                                                ${comment.commenttime.month+1}月
+                                                                                ${comment.commenttime.date}日
                                                                         </time>
                                                                         :
-                                                                        <a  href="${pageContext.request.contextPath}/chat?sendto=${comment.userid}" data-original-title="Add to Wishlist" data-toggle="tooltip" class=" big-font">
+                                                                        <a href="${pageContext.request.contextPath}/chat?sendto=${comment.userid}"
+                                                                           data-original-title="Add to Wishlist"
+                                                                           data-toggle="tooltip" class=" big-font">
                                                                             <i class="fa fa-commenting"></i>
                                                                         </a>
                                                                     </p>

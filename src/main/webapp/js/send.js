@@ -34,8 +34,8 @@ $(document).ready(function () {
             //重新获取聊天列表
             reGetChatUser(msgObj.from);
             // reGetChatUser(null);
-           /* var chatlistitem = '<a class="a-card" data-userid="' + msgObj.from + '"> <div class="card">' + msgObj.from + '</div> </a>';
-            $('.a-far').prepend(chatlistitem);*/
+            /* var chatlistitem = '<a class="a-card" data-userid="' + msgObj.from + '"> <div class="card">' + msgObj.from + '</div> </a>';
+             $('.a-far').prepend(chatlistitem);*/
         }
     };
     //建立连接和订阅
